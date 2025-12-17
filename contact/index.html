@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>聯絡我們｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-8">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">聯絡我們</h1>
+                <p class="section-subtitle">
+                  本表單僅為示意用，不會實際送出至後端。填寫完成後會顯示成功提示，符合 Prototype 驗收條件。
+                </p>
+              </div>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-[1.1fr,1.3fr] items-start">
+              <aside class="space-y-4">
+                <div class="card">
+                  <div class="card-inner space-y-2">
+                    <h2 class="text-sm font-semibold text-slate-900">公司聯絡資訊（假資料）</h2>
+                    <p class="text-xs text-slate-600">
+                      台北市信義區示意路 123 號 10 樓<br />
+                      電話：02-1234-5678<br />
+                      Email：contact@sunharu.example.com
+                    </p>
+                  </div>
+                </div>
+                <div class="card h-40 flex items-center justify-center text-xs text-slate-500">
+                  地圖占位圖
+                </div>
+              </aside>
+
+              <section>
+                <form class="space-y-4" data-contact-form>
+                  <div>
+                    <label class="form-label" for="name">聯絡人姓名</label>
+                    <input id="name" name="name" type="text" class="form-input" placeholder="請輸入姓名" />
+                    <p class="form-error" data-error="name"></p>
+                  </div>
+                  <div>
+                    <label class="form-label" for="company">公司 / 單位名稱</label>
+                    <input id="company" name="company" type="text" class="form-input" placeholder="請輸入公司或單位名稱" />
+                    <p class="form-error" data-error="company"></p>
+                  </div>
+                  <div class="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <label class="form-label" for="email">Email</label>
+                      <input id="email" name="email" type="email" class="form-input" placeholder="請輸入 Email" />
+                      <p class="form-error" data-error="email"></p>
+                    </div>
+                    <div>
+                      <label class="form-label" for="phone">聯絡電話（選填）</label>
+                      <input id="phone" name="phone" type="tel" class="form-input" placeholder="請輸入電話" />
+                      <p class="form-error" data-error="phone"></p>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="form-label" for="topic">洽詢主題</label>
+                    <select id="topic" name="topic" class="form-select">
+                      <option value="">請選擇</option>
+                      <option value="building">建築工程合作洽詢</option>
+                      <option value="civil">土木工程合作洽詢</option>
+                      <option value="tender">標案與合作提案</option>
+                      <option value="other">其他</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label" for="message">說明內容</label>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="請簡要說明合作需求或問題"></textarea>
+                    <p class="form-error" data-error="message"></p>
+                  </div>
+                  <div class="flex items-center justify-between gap-3">
+                    <p class="text-[11px] text-slate-500">
+                      點擊送出即表示您同意本公司於聯絡用途使用表單資訊（示意條款）。
+                    </p>
+                    <button type="submit" class="btn btn-accent text-xs">送出表單</button>
+                  </div>
+                  <div class="form-success hidden" data-form-success>
+                    感謝您的填寫，此為示意成功訊息。實際上線時可導至成功頁或加入更多說明。
+                  </div>
+                </form>
+              </section>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module" src="/src/pages/contact.js"></script>
+  </body>
+</html>
+
+

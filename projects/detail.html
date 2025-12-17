@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>工程實績詳情｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell" data-project-page>
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-8">
+            <div data-project-hero></div>
+            <div class="grid gap-10 md:grid-cols-[1.5fr,1.1fr] items-start">
+              <div class="space-y-8">
+                <div data-project-intro></div>
+                <div class="space-y-3">
+                  <h2 class="text-lg font-semibold text-slate-900">施工紀錄圖集（示意）</h2>
+                  <p class="text-xs text-slate-500">
+                    以下圖塊為圖片占位，可於實作階段串接實際工程照片並套用 Lightbox 互動。
+                  </p>
+                  <div class="gallery-grid" data-project-gallery></div>
+                </div>
+              </div>
+              <aside class="space-y-5">
+                <div class="card">
+                  <div class="card-inner space-y-2">
+                    <h3 class="text-sm font-semibold text-slate-900">相關工程案例（示意）</h3>
+                    <p class="text-xs text-slate-500">同類型工程中選出 3 件供延伸瀏覽。</p>
+                  </div>
+                </div>
+                <div class="grid gap-3" data-related-projects></div>
+                <div class="card">
+                  <div class="card-inner space-y-3">
+                    <h3 class="text-sm font-semibold text-slate-900">想了解類似工程？</h3>
+                    <p class="text-xs text-slate-600">
+                      此為聯絡 CTA 區塊示意，可將表單預選工程類型與來源頁面。
+                    </p>
+                    <a href="/contact/" class="btn btn-accent w-full justify-center text-xs">洽詢相關工程</a>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module" src="/src/pages/project-detail.js"></script>
+  </body>
+</html>
+
+

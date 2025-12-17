@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>專案與維運管理｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-8">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">專案與維運管理</h1>
+                <p class="section-subtitle">
+                  本頁切成安衛、教育訓練與 CSR 三大區塊，示意專案管理與企業永續實務面向。
+                </p>
+              </div>
+              <a href="/services/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                回核心能力總覽
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-3">
+              <section class="card">
+                <div class="card-inner space-y-3">
+                  <h2 class="text-lg font-semibold text-slate-900">工安與環安衛管理（占位）</h2>
+                  <p class="text-sm text-slate-700">
+                    此區可放入工地安全管理制度、教育訓練頻率、稽核與稽查機制，以及與外部單位合作的安衛計畫等內容。
+                  </p>
+                </div>
+              </section>
+              <section class="card">
+                <div class="card-inner space-y-3">
+                  <h2 class="text-lg font-semibold text-slate-900">教育訓練與人才發展（占位）</h2>
+                  <p class="text-sm text-slate-700">
+                    可說明新進人員訓練、在職進修、證照補助與跨部門交流等項目，呼應人才招募頁面的內容。
+                  </p>
+                </div>
+              </section>
+              <section class="card">
+                <div class="card-inner space-y-3">
+                  <h2 class="text-lg font-semibold text-slate-900">CSR 與在地共榮（占位）</h2>
+                  <p class="text-sm text-slate-700">
+                    可補充工地周邊溝通機制、回饋鄰里活動與環境改善作為，對應 ESG 與永續報告內容。
+                  </p>
+                </div>
+              </section>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a href="/quality/" class="btn btn-primary">前往品質與肯定</a>
+              <a href="/careers/" class="btn btn-secondary">了解人才與文化</a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module">
+      import { initLayout } from '/src/components/layout.js';
+      initLayout();
+    </script>
+  </body>
+</html>
+
+

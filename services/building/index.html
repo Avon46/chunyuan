@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>建築工程服務｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-8">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">建築工程服務</h1>
+                <p class="section-subtitle">
+                  本頁示意建築工程服務範圍、代表案例卡與四步驟流程圖，實作時可依實際服務內容補充。
+                </p>
+              </div>
+              <a href="/services/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                回核心能力總覽
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-[1.3fr,1fr] items-start">
+              <div class="card">
+                <div class="card-inner space-y-3">
+                  <h2 class="text-lg font-semibold text-slate-900">服務範圍（示意）</h2>
+                  <ul class="space-y-1.5 text-sm text-slate-700">
+                    <li>．企業總部與商辦大樓新建與改建工程</li>
+                    <li>．醫療院所、教學醫院與專科中心建築</li>
+                    <li>．校園建築、研發中心與實驗空間</li>
+                    <li>．廠辦混合、物流中心與機能型建築</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner space-y-3">
+                  <h2 class="text-lg font-semibold text-slate-900">合作模式（示意）</h2>
+                  <p class="text-sm text-slate-700">
+                    此區可敘述統包、設計施工分離、CM 等不同合作模式，以及對應的服務內容。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <h2 class="text-lg font-semibold text-slate-900">代表案例卡（示意 6 案）</h2>
+              <div class="grid gap-4 md:grid-cols-3">
+                <article class="card"><div class="card-inner text-sm text-slate-600">建築案例卡 1（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">建築案例卡 2（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">建築案例卡 3（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">建築案例卡 4（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">建築案例卡 5（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">建築案例卡 6（占位）</div></article>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <h2 class="text-lg font-semibold text-slate-900">合作流程四步驟（示意）</h2>
+              <div class="grid gap-4 md:grid-cols-4">
+                <div class="card">
+                  <div class="card-inner text-xs text-slate-700">
+                    <p class="tag tag-soft inline-flex mb-2">01</p>
+                    需求訪談與基地初步評估
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner text-xs text-slate-700">
+                    <p class="tag tag-soft inline-flex mb-2">02</p>
+                    方案規劃與預算試算
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner text-xs text-slate-700">
+                    <p class="tag tag-soft inline-flex mb-2">03</p>
+                    施工階段管理與品質控管
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner text-xs text-slate-700">
+                    <p class="tag tag-soft inline-flex mb-2">04</p>
+                    驗收、移交與後續維運協助
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a href="/projects/representative/" class="btn btn-primary">查看相關代表工程</a>
+              <a href="/contact/" class="btn btn-accent">與建築團隊聯絡</a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module">
+      import { initLayout } from '/src/components/layout.js';
+      initLayout();
+    </script>
+  </body>
+</html>
+
+

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>員工專區入口｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-3xl px-4 space-y-6">
+            <h1 class="section-title">員工專區入口（示意）</h1>
+            <p class="section-subtitle">
+              本頁僅作為內部系統的集中入口示意，不會出現在主導覽中。
+              實際上線時應加上登入驗證與權限控管。
+            </p>
+            <div class="card">
+              <div class="card-inner space-y-3">
+                <p class="text-sm font-semibold text-slate-900">登入提示（示意）</p>
+                <p class="text-xs text-slate-600">
+                  此區可放入「請使用公司帳號密碼登入」等說明文字，以及資訊安全相關提醒。
+                </p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <p class="text-sm font-semibold text-slate-900">內部系統連結清單（占位）</p>
+              <ul class="space-y-2 text-sm text-brand-green">
+                <li><a href="#" class="hover:text-brand-green-dark">工程管理系統（占位）</a></li>
+                <li><a href="#" class="hover:text-brand-green-dark">人資與出勤系統（占位）</a></li>
+                <li><a href="#" class="hover:text-brand-green-dark">教育訓練平台（占位）</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module">
+      import { initLayout } from '/src/components/layout.js';
+      initLayout();
+    </script>
+  </body>
+</html>
+
+

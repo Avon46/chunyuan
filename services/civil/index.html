@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>土木工程服務｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-8">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">土木工程服務</h1>
+                <p class="section-subtitle">
+                  本頁示意土木工程服務範圍與流程，可依實際捷運、道路、水利與海岸工程案例補充內容。
+                </p>
+              </div>
+              <a href="/services/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                回核心能力總覽
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-[1.3fr,1fr] items-start">
+              <div class="card">
+                <div class="card-inner space-y-3">
+                  <h2 class="text-lg font-semibold text-slate-900">服務範圍（示意）</h2>
+                  <ul class="space-y-1.5 text-sm text-slate-700">
+                    <li>．捷運軌道路線土建工程</li>
+                    <li>．聯外道路與立體交叉工程</li>
+                    <li>．水庫、堤防與水利設施改善</li>
+                    <li>．港灣與海岸防護工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner space-y-3">
+                  <h2 class="text-lg font-semibold text-slate-900">專案特性（示意）</h2>
+                  <p class="text-sm text-slate-700">
+                    可描述長期工期、多標段協調與交通維持計畫等特性，以及對安全與風險管理的要求。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <h2 class="text-lg font-semibold text-slate-900">代表案例卡（示意 6 案）</h2>
+              <div class="grid gap-4 md:grid-cols-3">
+                <article class="card"><div class="card-inner text-sm text-slate-600">土木案例卡 1（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">土木案例卡 2（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">土木案例卡 3（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">土木案例卡 4（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">土木案例卡 5（占位）</div></article>
+                <article class="card"><div class="card-inner text-sm text-slate-600">土木案例卡 6（占位）</div></article>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <h2 class="text-lg font-semibold text-slate-900">合作流程四步驟（示意）</h2>
+              <div class="grid gap-4 md:grid-cols-4">
+                <div class="card">
+                  <div class="card-inner text-xs text-slate-700">
+                    <p class="tag tag-soft inline-flex mb-2">01</p>
+                    路線規劃與可行性評估協作
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner text-xs text-slate-700">
+                    <p class="tag tag-soft inline-flex mb-2">02</p>
+                    工程界面與交通維持方案設計
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner text-xs text-slate-700">
+                    <p class="tag tag-soft inline-flex mb-2">03</p>
+                    施工階段分期分區與風險控管
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner text-xs text-slate-700">
+                    <p class="tag tag-soft inline-flex mb-2">04</p>
+                    驗收、資料建檔與後續維護建議
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a href="/projects/ongoing/" class="btn btn-primary">查看進行中土木工程</a>
+              <a href="/contact/" class="btn btn-accent">洽詢土木工程合作</a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module">
+      import { initLayout } from '/src/components/layout.js';
+      initLayout();
+    </script>
+  </body>
+</html>
+
+

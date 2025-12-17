@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>春原營造｜企業官網 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1">
+        <!-- Hero -->
+        <section class="bg-slate-900 text-white pt-32 md:pt-36 pb-16 md:pb-20 lg:pb-24">
+          <div class="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-[1.4fr,1fr] items-center">
+            <div class="space-y-6">
+              <p class="text-sm text-brand-green-light">
+                專業工程．永續夥伴（示意標語）
+              </p>
+              <h1>與城市共建的專業營造夥伴</h1>
+              <p class="text-sm md:text-base text-slate-200 max-w-xl">
+                本網站為春原營造企業官網 Prototype，所有工程案例與圖片皆為示意用假資料。
+                透過清楚的資訊架構與卡片化呈現，協助外部訪客快速理解公司能力與代表實績。
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <a href="/projects/" class="btn btn-accent">查看工程實績</a>
+                <a href="/contact/" class="btn btn-primary">聯絡專人</a>
+                <a href="#" class="btn btn-secondary">下載公司簡介（占位）</a>
+              </div>
+            </div>
+            <div class="space-y-5">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="card">
+                  <div class="card-inner">
+                    <p class="text-xs text-slate-500 mb-1">累積工程金額（示意）</p>
+                    <p class="text-2xl font-semibold text-slate-900">300+ 億</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner">
+                    <p class="text-xs text-slate-500 mb-1">專業團隊</p>
+                    <p class="text-2xl font-semibold text-slate-900">200+ 人</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner">
+                    <p class="text-xs text-slate-500 mb-1">代表工程</p>
+                    <p class="text-2xl font-semibold text-slate-900">80+ 件</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-inner">
+                    <p class="text-xs text-slate-500 mb-1">公共工程品質獎</p>
+                    <p class="text-2xl font-semibold text-slate-900">多項</p>
+                  </div>
+                </div>
+              </div>
+              <p class="text-[11px] text-slate-300">
+                上述數據皆為假數據，用於展示首頁信任指標條與 KPI 卡片樣式。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Core services -->
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4">
+            <div class="section-heading">
+              <div>
+                <h2 class="section-title">核心能力</h2>
+                <p class="section-subtitle">
+                  以建築、土木與專案管理三大能力為軸線，對應不同型態的公共與民間工程需求。
+                </p>
+              </div>
+              <a href="/services/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                檢視全部核心能力
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="grid gap-5 md:grid-cols-3" data-home-services></div>
+          </div>
+        </section>
+
+        <!-- Projects highlight -->
+        <section class="page-section bg-slate-100/80">
+          <div class="mx-auto max-w-6xl px-4">
+            <div class="section-heading">
+              <div>
+                <h2 class="section-title">代表工程精選</h2>
+                <p class="section-subtitle">
+                  以下為示意用工程卡片，實際可依工程類型、地區或產業別選入代表案例。
+                </p>
+              </div>
+              <a href="/projects/representative/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                更多代表工程
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="grid gap-5 md:grid-cols-3" data-home-projects></div>
+          </div>
+        </section>
+
+        <!-- Map preview -->
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 grid gap-8 md:grid-cols-[1.2fr,1fr] items-center">
+            <div>
+              <h2 class="section-title mb-3">亮點工程地圖預覽</h2>
+              <p class="section-subtitle mb-6">
+                此區為工程分布地圖示意，可於實作階段串接實際 GIS 或互動地圖，協助訪客從地理視角理解工程布局。
+              </p>
+              <a href="/projects/map/" class="btn btn-primary">前往工程地圖總覽</a>
+            </div>
+            <div class="card h-60 md:h-72 flex items-center justify-center text-xs text-slate-500">
+              地圖占位圖（未串接實際地圖）
+            </div>
+          </div>
+        </section>
+
+        <!-- Quality & sustainability -->
+        <section class="page-section bg-slate-900 text-white">
+          <div class="mx-auto max-w-6xl px-4">
+            <div class="section-heading mb-10">
+              <div>
+                <h2 class="section-title">品質與永續實踐</h2>
+                <p class="section-subtitle text-slate-300">
+                  以下為品質政策與永續行動的示意區塊，實際可對應認證、工安指標與 ESG 作為。
+                </p>
+              </div>
+              <a href="/quality/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green-light hover:text-white">
+                檢視品質政策
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="grid gap-5 md:grid-cols-3">
+              <div class="card bg-slate-900/60 border-slate-700">
+                <div class="card-inner space-y-3">
+                  <p class="text-xs text-slate-400">品質管理</p>
+                  <h3 class="text-lg font-semibold">工程品質與驗收流程</h3>
+                  <p class="text-sm text-slate-300">
+                    以制度化的品質計畫與檢核表，確保各階段工程成果符合規範與設計要求。
+                  </p>
+                </div>
+              </div>
+              <div class="card bg-slate-900/60 border-slate-700">
+                <div class="card-inner space-y-3">
+                  <p class="text-xs text-slate-400">安全與工安</p>
+                  <h3 class="text-lg font-semibold">工地安全與風險控管</h3>
+                  <p class="text-sm text-slate-300">
+                    結合教育訓練、日常巡檢與數位化回報機制，打造零事故為目標的工地環境。
+                  </p>
+                </div>
+              </div>
+              <div class="card bg-slate-900/60 border-slate-700">
+                <div class="card-inner space-y-3">
+                  <p class="text-xs text-slate-400">永續與 ESG</p>
+                  <h3 class="text-lg font-semibold">節能減碳與在地共榮</h3>
+                  <p class="text-sm text-slate-300">
+                    此處可放入永續策略、碳盤查與社會參與等內容，展示企業長期承諾。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- News & media -->
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-[1.4fr,1fr] items-start">
+            <div>
+              <div class="section-heading">
+                <div>
+                  <h2 class="section-title">最新消息</h2>
+                  <p class="section-subtitle">
+                    以下為示意用消息卡片，可依實際需求調整分類與版型。
+                  </p>
+                </div>
+                <a href="/media/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                  前往消息與影音
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+              <div class="grid gap-4" data-home-news></div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-3">影音精選</h3>
+              <p class="text-xs text-slate-500 mb-4">
+                此區為工程記錄與品牌影像示意，實際可串接影音平台。
+              </p>
+              <div class="grid gap-4" data-home-videos></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="page-section bg-brand-green text-white">
+          <div class="mx-auto max-w-6xl px-4 grid gap-8 md:grid-cols-[1.4fr,1fr] items-center">
+            <div>
+              <h2 class="section-title mb-3">討論下一個工程計畫</h2>
+              <p class="section-subtitle text-brand-green-light">
+                不論是企業總部、公共建設或再開發案，歡迎與我們分享您的需求。
+                此區作為全站最終 CTA，導流至聯絡頁與公司簡介下載。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3 justify-start md:justify-end">
+              <a href="/contact/" class="btn btn-accent">聯絡我們</a>
+              <a href="#" class="btn btn-secondary bg-transparent border-white/40 text-white hover:bg-white/10">
+                下載公司簡介（占位）
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+
+    <script type="module" src="/src/pages/home.js"></script>
+  </body>
+</html>
+
+

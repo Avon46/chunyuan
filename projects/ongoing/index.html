@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>進行中工程｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-6">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">進行中工程</h1>
+                <p class="section-subtitle">
+                  本頁可擷取 <code>projects.json</code> 中狀態為「施工中」的工程，示意持續進行中的重要案場。
+                </p>
+              </div>
+              <a href="/projects/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                回工程實績總覽
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="grid gap-4 md:grid-cols-3">
+              <article class="card"><div class="card-inner text-sm text-slate-600">進行中工程卡 1（占位）</div></article>
+              <article class="card"><div class="card-inner text-sm text-slate-600">進行中工程卡 2（占位）</div></article>
+              <article class="card"><div class="card-inner text-sm text-slate-600">進行中工程卡 3（占位）</div></article>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module">
+      import { initLayout } from '/src/components/layout.js';
+      initLayout();
+    </script>
+  </body>
+</html>
+
+

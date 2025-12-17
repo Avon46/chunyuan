@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>工程實績｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20" data-project-page>
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-8">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">工程實績</h1>
+                <p class="section-subtitle">
+                  本頁示意工程實績清單與篩選列，工程資料統一來自 <code>projects.json</code>，可依類型與狀態即時篩選。
+                </p>
+              </div>
+              <div class="hidden md:flex items-center gap-3 text-xs text-slate-500">
+                <span>目前顯示 <span data-project-count>0</span> 件工程</span>
+                <a href="/projects/representative/" class="hover:text-brand-green">代表工程</a>
+                <a href="/projects/ongoing/" class="hover:text-brand-green">進行中工程</a>
+                <a href="/projects/map/" class="hover:text-brand-green">工程地圖</a>
+              </div>
+            </div>
+
+            <!-- Desktop filter bar -->
+            <div class="hidden md:flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white px-4 py-3">
+              <div class="flex flex-wrap items-center gap-3">
+                <p class="text-xs font-medium text-slate-700">篩選條件</p>
+                <div class="flex flex-wrap gap-2" data-filter-types></div>
+                <div class="flex flex-wrap gap-2" data-filter-status></div>
+              </div>
+            </div>
+
+            <!-- Mobile filter button & drawer -->
+            <div class="md:hidden flex justify-between items-center">
+              <p class="text-xs text-slate-500">
+                目前顯示 <span data-project-count>0</span> 件工程
+              </p>
+              <button type="button" class="btn btn-secondary text-xs px-3 py-1.5" data-filter-drawer-toggle>
+                篩選條件
+              </button>
+            </div>
+            <div
+              class="fixed inset-x-0 bottom-0 z-30 translate-y-full opacity-0 pointer-events-none transition-all duration-200 bg-slate-900/60 backdrop-blur"
+              data-filter-drawer
+            >
+              <div class="mx-auto max-w-6xl px-4 pb-6 pt-4">
+                <div class="mx-auto max-w-md rounded-2xl bg-white p-4 space-y-4">
+                  <div class="flex items-center justify-between">
+                    <p class="text-sm font-medium text-slate-900">篩選工程實績</p>
+                    <button type="button" class="text-xs text-slate-500" data-filter-apply>完成</button>
+                  </div>
+                  <div>
+                    <p class="text-xs text-slate-500 mb-2">依工程類型</p>
+                    <div class="flex flex-wrap gap-2" data-filter-types></div>
+                  </div>
+                  <div>
+                    <p class="text-xs text-slate-500 mb-2">依工程狀態</p>
+                    <div class="flex flex-wrap gap-2" data-filter-status></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- List -->
+            <div class="grid gap-5 md:grid-cols-3" data-project-list></div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module" src="/src/pages/projects-list.js"></script>
+  </body>
+</html>
+
+

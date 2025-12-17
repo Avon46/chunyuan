@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>核心能力總覽｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-8">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">核心能力</h1>
+                <p class="section-subtitle">
+                  以建築工程、土木工程與專案管理三個面向，對應不同工程型態與階段需求。
+                  本頁為核心能力總覽，並導流至三個子頁。
+                </p>
+              </div>
+            </div>
+            <div class="grid gap-5 md:grid-cols-3">
+              <article class="card">
+                <div class="card-inner space-y-3">
+                  <p class="tag tag-soft inline-flex">建築工程</p>
+                  <h2 class="text-xl font-semibold text-slate-900">建築工程能力</h2>
+                  <p class="text-sm text-slate-700">
+                    企業總部、醫療院所、校園建築等多元建築類型的設計與施工管理。
+                  </p>
+                  <a href="/services/building/" class="inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                    查看建築工程子頁
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-inner space-y-3">
+                  <p class="tag tag-soft inline-flex">土木工程</p>
+                  <h2 class="text-xl font-semibold text-slate-900">土木工程能力</h2>
+                  <p class="text-sm text-slate-700">
+                    捷運、道路、水利與海岸等公共建設之土木專業與長期標案經驗。
+                  </p>
+                  <a href="/services/civil/" class="inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                    查看土木工程子頁
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-inner space-y-3">
+                  <p class="tag tag-soft inline-flex">專案管理</p>
+                  <h2 class="text-xl font-semibold text-slate-900">專案與維運管理</h2>
+                  <p class="text-sm text-slate-700">
+                    從規劃設計、施工到後續維運，提供全生命週期的管理與顧問服務。
+                  </p>
+                  <a href="/services/management/" class="inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                    查看專案管理子頁
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module">
+      import { initLayout } from '/src/components/layout.js';
+      initLayout();
+    </script>
+  </body>
+</html>
+
+

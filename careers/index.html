@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>人才招募｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-8">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">人才招募</h1>
+                <p class="section-subtitle">
+                  本頁示意文化與福利摘要、職缺列表卡與職缺詳頁占位。實作階段可串接實際招募系統。
+                </p>
+              </div>
+            </div>
+
+            <section class="grid gap-6 md:grid-cols-3">
+              <article class="card">
+                <div class="card-inner space-y-2">
+                  <h2 class="text-sm font-semibold text-slate-900">團隊文化（占位）</h2>
+                  <p class="text-xs text-slate-600">可放入團隊價值觀、合作氛圍與學習環境等敘述。</p>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-inner space-y-2">
+                  <h2 class="text-sm font-semibold text-slate-900">福利制度（占位）</h2>
+                  <p class="text-xs text-slate-600">可列出薪酬結構、保險、休假與補助等項目。</p>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-inner space-y-2">
+                  <h2 class="text-sm font-semibold text-slate-900">職涯發展（占位）</h2>
+                  <p class="text-xs text-slate-600">可描述升遷制度、輪調機會與教育訓練資源。</p>
+                </div>
+              </article>
+            </section>
+
+            <section class="space-y-4">
+              <h2 class="text-lg font-semibold text-slate-900">開放職缺（假資料）</h2>
+              <div class="space-y-3">
+                <article class="card">
+                  <div class="card-inner space-y-2">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-sm font-semibold text-slate-900">土木工地主任（假職缺）</h3>
+                      <span class="tag tag-soft">工程管理</span>
+                    </div>
+                    <p class="text-xs text-slate-600">工作地點：北部地區 · 年資：3 年以上（示意）</p>
+                    <a href="#" class="inline-flex items-center gap-1 text-xs font-medium text-brand-green hover:text-brand-green-dark">
+                      查看職缺詳情（占位）
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+                <article class="card">
+                  <div class="card-inner space-y-2">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-sm font-semibold text-slate-900">建築專案工程師（假職缺）</h3>
+                      <span class="tag tag-soft">設計與施工</span>
+                    </div>
+                    <p class="text-xs text-slate-600">工作地點：中部地區 · 年資：1-3 年（示意）</p>
+                    <a href="#" class="inline-flex items-center gap-1 text-xs font-medium text-brand-green hover:text-brand-green-dark">
+                      查看職缺詳情（占位）
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module">
+      import { initLayout } from '/src/components/layout.js';
+      initLayout();
+    </script>
+  </body>
+</html>
+
+

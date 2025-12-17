@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-slate-800 bg-slate-50;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-semibold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen flex flex-col bg-slate-50;
+  }
+
+  .page-section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .section-heading {
+    @apply flex items-baseline justify-between gap-4 mb-8;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-semibold text-slate-900;
+  }
+
+  .section-subtitle {
+    @apply text-sm md:text-base text-slate-500 max-w-2xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-150 whitespace-nowrap;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-green text-white hover:bg-brand-green-dark;
+  }
+
+  .btn-secondary {
+    @apply btn border border-brand-green text-brand-green bg-white hover:bg-brand-green-light;
+  }
+
+  .btn-accent {
+    @apply btn bg-brand-orange text-white hover:bg-brand-orange-dark;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-slate-100 text-slate-600;
+  }
+
+  .tag-soft {
+    @apply bg-brand-green-light text-brand-green-dark;
+  }
+
+  .tag-outline {
+    @apply border border-slate-300 bg-white;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-elevated hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .card-inner {
+    @apply p-5 md:p-6;
+  }
+
+  .card-meta {
+    @apply text-xs text-slate-500 flex flex-wrap gap-3;
+  }
+
+  .filter-pill {
+    @apply inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600 cursor-pointer hover:border-brand-green hover:text-brand-green;
+  }
+
+  .filter-pill-active {
+    @apply bg-brand-green text-white border-brand-green;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-slate-700 mb-1;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-green focus:ring-2 focus:ring-brand-green-light outline-none;
+  }
+
+  .form-textarea {
+    @apply min-h-[120px] resize-y;
+  }
+
+  .form-error {
+    @apply mt-1 text-xs text-red-600;
+  }
+
+  .form-success {
+    @apply mt-4 rounded-xl bg-green-50 px-4 py-3 text-sm text-emerald-700 border border-emerald-200;
+  }
+
+  .gallery-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4;
+  }
+
+  .gallery-item {
+    @apply relative overflow-hidden rounded-xl bg-slate-200 cursor-pointer;
+  }
+
+  .gallery-item img {
+    @apply w-full h-full object-cover transition-transform duration-300;
+  }
+
+  .gallery-item:hover img {
+    @apply scale-105;
+  }
+
+  .lightbox-backdrop {
+    @apply fixed inset-0 z-50 bg-black/70 flex items-center justify-center;
+  }
+
+  .lightbox-content {
+    @apply bg-slate-900 rounded-2xl overflow-hidden max-w-4xl w-full mx-4;
+  }
+}
+
+

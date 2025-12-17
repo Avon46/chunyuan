@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>工程地圖｜春原營造 Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header id="site-header"></header>
+      <main class="flex-1 pt-20">
+        <section class="page-section">
+          <div class="mx-auto max-w-6xl px-4 space-y-6">
+            <div class="section-heading">
+              <div>
+                <h1 class="section-title">工程分布地圖（示意）</h1>
+                <p class="section-subtitle">
+                  此頁為工程地圖預留版型，可於實作階段整合互動地圖或 GIS 系統，對應 <code>projects.json</code> 中工程的地理資訊。
+                </p>
+              </div>
+            </div>
+            <div class="card h-80 flex items-center justify-center text-sm text-slate-500">
+              互動地圖占位圖
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script type="module">
+      import { initLayout } from '/src/components/layout.js';
+      initLayout();
+    </script>
+  </body>
+</html>
+
+
