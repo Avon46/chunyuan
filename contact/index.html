@@ -9,86 +9,116 @@
   <body>
     <div class="page-shell">
       <header id="site-header"></header>
-      <main class="flex-1 pt-20">
-        <section class="page-section">
-          <div class="mx-auto max-w-6xl px-4 space-y-8">
-            <div class="section-heading">
-              <div>
-                <h1 class="section-title">聯絡我們</h1>
-                <p class="section-subtitle">
-                  本表單僅為示意用，不會實際送出至後端。填寫完成後會顯示成功提示，符合 Prototype 驗收條件。
-                </p>
+      <main class="flex-1">
+        <!-- 快速聯絡區塊 -->
+        <section class="bg-brand-green text-white py-12 sm:py-16 md:py-20">
+          <div class="mx-auto max-w-6xl px-4">
+            <div class="text-center space-y-6">
+              <h1 class="text-3xl sm:text-4xl font-bold">立即聯絡我們</h1>
+              <p class="text-lg sm:text-xl text-white/90">選擇最適合您的聯絡方式，我們將盡快回覆</p>
+              
+              <!-- 聯絡方式卡片 -->
+              <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto mt-8">
+                <!-- 電話聯絡 -->
+                <a href="tel:02-1234-5678" 
+                   class="group bg-white text-brand-green rounded-2xl p-6 sm:p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                  <div class="flex flex-col items-center gap-3">
+                    <div class="w-14 h-14 bg-brand-green/10 rounded-full flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors">
+                      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-sm font-medium text-slate-600 mb-1">電話聯絡</div>
+                      <div class="text-2xl font-bold">02-1234-5678</div>
+                      <div class="text-xs text-slate-500 mt-2">週一至週五 9:00-18:00</div>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Email 聯絡 -->
+                <a href="mailto:contact@sunharu.example.com" 
+                   class="group bg-white text-brand-green rounded-2xl p-6 sm:p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                  <div class="flex flex-col items-center gap-3">
+                    <div class="w-14 h-14 bg-brand-green/10 rounded-full flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors">
+                      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-sm font-medium text-slate-600 mb-1">Email 聯絡</div>
+                      <div class="text-lg sm:text-xl font-bold break-all">contact@sunharu.example.com</div>
+                      <div class="text-xs text-slate-500 mt-2">24 小時內回覆</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- 地址資訊 -->
+              <div class="text-sm text-white/70 pt-4 border-t border-white/20 max-w-3xl mx-auto mt-8">
+                <p>台北市信義區示意路 123 號 10 樓</p>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div class="grid gap-8 md:grid-cols-[1.1fr,1.3fr] items-start">
-              <aside class="space-y-4">
-                <div class="card">
-                  <div class="card-inner space-y-2">
-                    <h2 class="text-sm font-semibold text-slate-900">公司聯絡資訊（假資料）</h2>
-                    <p class="text-xs text-slate-600">
-                      台北市信義區示意路 123 號 10 樓<br />
-                      電話：02-1234-5678<br />
-                      Email：contact@sunharu.example.com
-                    </p>
-                  </div>
-                </div>
-                <div class="card h-40 flex items-center justify-center text-xs text-slate-500">
-                  地圖占位圖
-                </div>
-              </aside>
-
-              <section>
-                <form class="space-y-4" data-contact-form>
-                  <div>
-                    <label class="form-label" for="name">聯絡人姓名</label>
-                    <input id="name" name="name" type="text" class="form-input" placeholder="請輸入姓名" />
-                    <p class="form-error" data-error="name"></p>
-                  </div>
-                  <div>
-                    <label class="form-label" for="company">公司 / 單位名稱</label>
-                    <input id="company" name="company" type="text" class="form-input" placeholder="請輸入公司或單位名稱" />
-                    <p class="form-error" data-error="company"></p>
-                  </div>
-                  <div class="grid gap-4 md:grid-cols-2">
-                    <div>
-                      <label class="form-label" for="email">Email</label>
-                      <input id="email" name="email" type="email" class="form-input" placeholder="請輸入 Email" />
-                      <p class="form-error" data-error="email"></p>
-                    </div>
-                    <div>
-                      <label class="form-label" for="phone">聯絡電話（選填）</label>
-                      <input id="phone" name="phone" type="tel" class="form-input" placeholder="請輸入電話" />
-                      <p class="form-error" data-error="phone"></p>
-                    </div>
-                  </div>
-                  <div>
-                    <label class="form-label" for="topic">洽詢主題</label>
-                    <select id="topic" name="topic" class="form-select">
-                      <option value="">請選擇</option>
-                      <option value="building">建築工程合作洽詢</option>
-                      <option value="civil">土木工程合作洽詢</option>
-                      <option value="tender">標案與合作提案</option>
-                      <option value="other">其他</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label class="form-label" for="message">說明內容</label>
-                    <textarea id="message" name="message" class="form-textarea" placeholder="請簡要說明合作需求或問題"></textarea>
-                    <p class="form-error" data-error="message"></p>
-                  </div>
-                  <div class="flex items-center justify-between gap-3">
-                    <p class="text-[11px] text-slate-500">
-                      點擊送出即表示您同意本公司於聯絡用途使用表單資訊（示意條款）。
-                    </p>
-                    <button type="submit" class="btn btn-accent text-xs">送出表單</button>
-                  </div>
-                  <div class="form-success hidden" data-form-success>
-                    感謝您的填寫，此為示意成功訊息。實際上線時可導至成功頁或加入更多說明。
-                  </div>
-                </form>
-              </section>
+        <!-- 線上表單區塊 -->
+        <section class="page-section bg-slate-50">
+          <div class="mx-auto max-w-3xl px-4 space-y-6">
+            <div class="text-center">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">或填寫線上表單</h2>
+              <p class="text-sm text-slate-500">我們將在 24 小時內與您聯繫</p>
             </div>
+
+            <div class="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
+              <form class="space-y-5" data-contact-form>
+                <div>
+                  <label class="form-label" for="name">您的姓名 *</label>
+                  <input id="name" name="name" type="text" class="form-input" placeholder="請輸入姓名" />
+                  <p class="form-error" data-error="name"></p>
+                </div>
+                
+                <div>
+                  <label class="form-label" for="email">Email *</label>
+                  <input id="email" name="email" type="email" class="form-input" placeholder="example@company.com" />
+                  <p class="form-error" data-error="email"></p>
+                </div>
+                
+                <div>
+                  <label class="form-label" for="topic">洽詢主題 *</label>
+                  <select id="topic" name="topic" class="form-select">
+                    <option value="">請選擇洽詢主題</option>
+                    <option value="building">建築工程合作</option>
+                    <option value="civil">土木工程合作</option>
+                    <option value="tender">標案與提案</option>
+                    <option value="other">其他洽詢</option>
+                  </select>
+                  <p class="form-error" data-error="topic"></p>
+                </div>
+                
+                <div>
+                  <label class="form-label" for="message">說明內容 *</label>
+                  <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="請簡要說明您的需求或問題"></textarea>
+                  <p class="form-error" data-error="message"></p>
+                </div>
+                
+                <div class="pt-2">
+                  <button type="submit" class="btn btn-accent w-full sm:w-auto sm:min-w-[200px]">送出表單</button>
+                  <p class="text-[11px] text-slate-400 mt-3">
+                    點擊送出即表示您同意本公司於聯絡用途使用表單資訊
+                  </p>
+                </div>
+                
+                <div class="form-success hidden" data-form-success>
+                  ✓ 感謝您的填寫！我們已收到您的訊息，將盡快與您聯繫。
+                </div>
+              </form>
+            </div>
+
+            <!-- Prototype 說明 -->
+            <p class="text-[11px] text-slate-400 text-center">
+              ※ 本表單為展示用途，資料不會實際送出
+            </p>
           </div>
         </section>
       </main>
