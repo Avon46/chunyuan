@@ -74,52 +74,56 @@ function injectHeader() {
         </div>
       </div>
 
-      <div class="lg:hidden fixed inset-x-0 top-0 z-30 origin-top scale-y-0 opacity-0 pointer-events-none transition-all duration-200 bg-slate-900/98 backdrop-blur-md" data-mobile-menu>
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 pt-3 sm:pt-4 pb-5 sm:pb-6">
-          <div class="flex items-center justify-between mb-3 sm:mb-4">
-            <a href="/" class="flex items-center gap-2 sm:gap-3">
-              <div class="h-8 w-8 sm:h-9 sm:w-9 rounded-lg sm:rounded-xl bg-brand-green flex items-center justify-center text-white text-sm font-semibold">
-                春
-              </div>
-              <div>
-                <p class="text-xs sm:text-sm font-semibold tracking-wide text-white">春原營造股份有限公司</p>
-                <p class="text-[10px] sm:text-xs text-slate-300">SUNHARU CONSTRUCTION</p>
-              </div>
-            </a>
-            <button
-              class="inline-flex items-center justify-center rounded-full border border-white/30 text-white h-9 w-9"
-              type="button"
-              aria-label="關閉選單"
-              data-mobile-menu-close
-            >
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <nav class="flex flex-col gap-1 mb-4 sm:mb-5">
-            ${NAV_LINKS.map(
-              (link) => `
-              <a href="${link.href}"
-                 class="flex items-center justify-between rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-medium ${
-                   currentPath === normalizePath(link.href)
-                     ? 'bg-white text-brand-green'
-                     : 'text-slate-100 hover:bg-white/5'
-                 }"
-              >
-                <span>${link.label}</span>
-                <span class="text-xs text-slate-400">前往</span>
+      <!-- Mobile Menu Overlay -->
+      <div class="lg:hidden fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300" data-mobile-menu-overlay>
+        <!-- Mobile Menu Panel -->
+        <div class="fixed inset-0 bg-slate-900 overflow-y-auto opacity-0 translate-y-full transition-all duration-300" style="height: 100dvh; -webkit-overflow-scrolling: touch;" data-mobile-menu-panel>
+          <div class="min-h-full px-4 sm:px-6 pt-3 sm:pt-4 pb-5 sm:pb-6">
+            <div class="flex items-center justify-between mb-3 sm:mb-4">
+              <a href="/" class="flex items-center gap-2 sm:gap-3">
+                <div class="h-8 w-8 sm:h-9 sm:w-9 rounded-lg sm:rounded-xl bg-brand-green flex items-center justify-center text-white text-sm font-semibold">
+                  春
+                </div>
+                <div>
+                  <p class="text-xs sm:text-sm font-semibold tracking-wide text-white">春原營造股份有限公司</p>
+                  <p class="text-[10px] sm:text-xs text-slate-300">SUNHARU CONSTRUCTION</p>
+                </div>
               </a>
-            `
-            ).join('')}
-          </nav>
-          <div class="space-y-3">
-            <a href="/contact/" class="btn btn-accent w-full justify-center shadow-lg shadow-brand-orange/30">
-              立即聯絡專人
-            </a>
-            <a href="${EMPLOYEE_ENTRY.href}" class="btn w-full justify-center border-[0.5px] border-white/20 bg-transparent text-white/70 hover:text-white hover:bg-white/5">
-              ${EMPLOYEE_ENTRY.label}
-            </a>
+              <button
+                class="inline-flex items-center justify-center rounded-full border border-white/30 text-white h-9 w-9 hover:bg-white/10"
+                type="button"
+                aria-label="關閉選單"
+                data-mobile-menu-close
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <nav class="flex flex-col gap-1 mb-4 sm:mb-5">
+              ${NAV_LINKS.map(
+                (link) => `
+                <a href="${link.href}"
+                   class="flex items-center justify-between rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-medium ${
+                     currentPath === normalizePath(link.href)
+                       ? 'bg-white text-brand-green'
+                       : 'text-slate-100 hover:bg-white/5'
+                   }"
+                >
+                  <span>${link.label}</span>
+                  <span class="text-xs text-slate-400">前往</span>
+                </a>
+              `
+              ).join('')}
+            </nav>
+            <div class="space-y-3">
+              <a href="/contact/" class="btn btn-accent w-full justify-center shadow-lg shadow-brand-orange/30">
+                立即聯絡專人
+              </a>
+              <a href="${EMPLOYEE_ENTRY.href}" class="btn w-full justify-center border-[0.5px] border-white/20 bg-transparent text-white/70 hover:text-white hover:bg-white/5">
+                ${EMPLOYEE_ENTRY.label}
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -179,7 +183,8 @@ function setupHeaderBehavior() {
   const headerShell = document.querySelector('#site-header > div');
   const mobileToggle = document.querySelector('[data-mobile-menu-toggle]');
   const mobileClose = document.querySelector('[data-mobile-menu-close]');
-  const mobileMenu = document.querySelector('[data-mobile-menu]');
+  const mobileOverlay = document.querySelector('[data-mobile-menu-overlay]');
+  const mobilePanel = document.querySelector('[data-mobile-menu-panel]');
 
   if (!headerShell) return;
 
@@ -208,25 +213,56 @@ function setupHeaderBehavior() {
   onScroll();
 
   const setMenuOpen = (open) => {
-    if (!mobileMenu) return;
+    if (!mobileOverlay || !mobilePanel) return;
     const body = document.body;
+    
     if (open) {
-      mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-      mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
-      mobileMenu.style.transform = 'scaleY(1)';
-      body.classList.add('overflow-hidden');
+      // 開啟選單
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+      body.style.top = `-${window.scrollY}px`;
+      
+      // 顯示 overlay 和 panel
+      mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      mobileOverlay.classList.add('opacity-100', 'pointer-events-auto');
+      
+      mobilePanel.classList.remove('opacity-0', 'translate-y-full');
+      mobilePanel.classList.add('opacity-100', 'translate-y-0');
     } else {
-      mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-      mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-      mobileMenu.style.transform = 'scaleY(0)';
-      body.classList.remove('overflow-hidden');
+      // 關閉選單
+      const scrollY = body.style.top;
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.width = '';
+      body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      
+      // 隱藏 overlay 和 panel
+      mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+      mobileOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+      
+      mobilePanel.classList.add('opacity-0', 'translate-y-full');
+      mobilePanel.classList.remove('opacity-100', 'translate-y-0');
     }
   };
 
+  // 點擊開啟按鈕
   mobileToggle?.addEventListener('click', () => setMenuOpen(true));
+  
+  // 點擊關閉按鈕
   mobileClose?.addEventListener('click', () => setMenuOpen(false));
-  mobileMenu?.addEventListener('click', (evt) => {
-    if (evt.target === mobileMenu) setMenuOpen(false);
+  
+  // 點擊 overlay（遮罩）關閉
+  mobileOverlay?.addEventListener('click', (evt) => {
+    if (evt.target === mobileOverlay) {
+      setMenuOpen(false);
+    }
+  });
+  
+  // 點擊 panel 內容時阻止冒泡（不關閉選單）
+  mobilePanel?.addEventListener('click', (evt) => {
+    evt.stopPropagation();
   });
 }
 
