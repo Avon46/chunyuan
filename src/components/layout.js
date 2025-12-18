@@ -35,15 +35,15 @@ function injectHeader() {
 
   header.innerHTML = `
     <div class="fixed inset-x-0 top-0 z-40 transition-all duration-300 bg-slate-900/80 backdrop-blur">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="flex items-center justify-between gap-4 py-4 header-inner">
-          <a href="/" class="flex items-center gap-3">
-            <div class="h-9 w-9 rounded-xl bg-brand-green flex items-center justify-center text-white text-sm font-semibold shadow-elevated">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="flex items-center justify-between gap-3 sm:gap-4 py-3 sm:py-4 header-inner">
+          <a href="/" class="flex items-center gap-2 sm:gap-3">
+            <div class="h-8 w-8 sm:h-9 sm:w-9 rounded-lg sm:rounded-xl bg-brand-green flex items-center justify-center text-white text-sm font-semibold shadow-elevated">
               春
             </div>
             <div class="hidden sm:block">
-              <p class="text-sm font-semibold tracking-wide text-white">春原營造股份有限公司</p>
-              <p class="text-xs text-slate-300">SUNHARU CONSTRUCTION</p>
+              <p class="text-xs sm:text-sm font-semibold tracking-wide text-white">春原營造股份有限公司</p>
+              <p class="text-[10px] sm:text-xs text-slate-300">SUNHARU CONSTRUCTION</p>
             </div>
           </a>
 
@@ -61,13 +61,13 @@ function injectHeader() {
           </div>
 
           <button
-            class="lg:hidden inline-flex items-center justify-center rounded-full border border-white/30 text-white h-10 w-10"
+            class="lg:hidden inline-flex items-center justify-center rounded-full border border-white/30 text-white h-9 w-9 sm:h-10 sm:w-10"
             type="button"
             aria-label="開啟選單"
             data-mobile-menu-toggle
           >
             <span class="sr-only">Toggle navigation</span>
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 7h16M4 12h16M4 17h16" />
             </svg>
           </button>
@@ -75,15 +75,15 @@ function injectHeader() {
       </div>
 
       <div class="lg:hidden fixed inset-x-0 top-0 z-30 origin-top scale-y-0 opacity-0 pointer-events-none transition-all duration-200 bg-slate-900/98 backdrop-blur-md" data-mobile-menu>
-        <div class="mx-auto max-w-6xl px-4 pt-4 pb-6">
-          <div class="flex items-center justify-between mb-4">
-            <a href="/" class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-xl bg-brand-green flex items-center justify-center text-white text-sm font-semibold">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 pt-3 sm:pt-4 pb-5 sm:pb-6">
+          <div class="flex items-center justify-between mb-3 sm:mb-4">
+            <a href="/" class="flex items-center gap-2 sm:gap-3">
+              <div class="h-8 w-8 sm:h-9 sm:w-9 rounded-lg sm:rounded-xl bg-brand-green flex items-center justify-center text-white text-sm font-semibold">
                 春
               </div>
               <div>
-                <p class="text-sm font-semibold tracking-wide text-white">春原營造股份有限公司</p>
-                <p class="text-xs text-slate-300">SUNHARU CONSTRUCTION</p>
+                <p class="text-xs sm:text-sm font-semibold tracking-wide text-white">春原營造股份有限公司</p>
+                <p class="text-[10px] sm:text-xs text-slate-300">SUNHARU CONSTRUCTION</p>
               </div>
             </a>
             <button
@@ -97,11 +97,11 @@ function injectHeader() {
               </svg>
             </button>
           </div>
-          <nav class="flex flex-col gap-1 mb-5">
+          <nav class="flex flex-col gap-1 mb-4 sm:mb-5">
             ${NAV_LINKS.map(
               (link) => `
               <a href="${link.href}"
-                 class="flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium ${
+                 class="flex items-center justify-between rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-medium ${
                    currentPath === normalizePath(link.href)
                      ? 'bg-white text-brand-green'
                      : 'text-slate-100 hover:bg-white/5'
