@@ -74,10 +74,12 @@ function injectHeader() {
         </div>
       </div>
 
-      <!-- Mobile Menu Overlay -->
-      <div class="lg:hidden fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300" data-mobile-menu-overlay>
-        <!-- Mobile Menu Panel -->
-        <div class="fixed inset-0 bg-slate-900 overflow-y-auto opacity-0 translate-y-full transition-all duration-300" style="height: 100dvh; -webkit-overflow-scrolling: touch;" data-mobile-menu-panel>
+      <!-- Mobile Menu Overlay (Background) -->
+      <div class="lg:hidden fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300" data-mobile-menu-overlay></div>
+      
+      <!-- Mobile Menu Panel -->
+      <div class="lg:hidden fixed inset-0 z-[51] pointer-events-none" data-mobile-menu-container>
+        <div class="fixed inset-0 bg-slate-900 overflow-y-auto opacity-0 -translate-y-full transition-all duration-300 pointer-events-auto" style="height: 100dvh; -webkit-overflow-scrolling: touch;" data-mobile-menu-panel>
           <div class="min-h-full px-4 sm:px-6 pt-3 sm:pt-4 pb-5 sm:pb-6">
             <div class="flex items-center justify-between mb-3 sm:mb-4">
               <a href="/" class="flex items-center gap-2 sm:gap-3">
@@ -100,23 +102,25 @@ function injectHeader() {
                 </svg>
               </button>
             </div>
-            <nav class="flex flex-col gap-1 mb-4 sm:mb-5">
+            <nav class="flex flex-col gap-2 mb-8">
               ${NAV_LINKS.map(
                 (link) => `
                 <a href="${link.href}"
-                   class="flex items-center justify-between rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-medium ${
+                   class="flex items-center justify-between rounded-xl px-4 py-4 transition-all duration-200 ${
                      currentPath === normalizePath(link.href)
-                       ? 'bg-white text-brand-green'
-                       : 'text-slate-100 hover:bg-white/5'
+                       ? 'bg-white text-brand-green shadow-sm'
+                       : 'text-slate-100 hover:bg-white/8 active:bg-white/12'
                    }"
                 >
-                  <span>${link.label}</span>
-                  <span class="text-xs text-slate-400">前往</span>
+                  <span class="text-[17px] font-semibold leading-tight">${link.label}</span>
+                  <svg class="w-3.5 h-3.5 opacity-40 ${currentPath === normalizePath(link.href) ? 'text-brand-green opacity-60' : 'text-slate-400'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
                 </a>
               `
               ).join('')}
             </nav>
-            <div class="space-y-3">
+            <div class="space-y-3 pt-2">
               <a href="/contact/" class="btn btn-accent w-full justify-center shadow-lg shadow-brand-orange/30">
                 立即聯絡專人
               </a>
@@ -126,6 +130,7 @@ function injectHeader() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   `;
@@ -184,6 +189,7 @@ function setupHeaderBehavior() {
   const mobileToggle = document.querySelector('[data-mobile-menu-toggle]');
   const mobileClose = document.querySelector('[data-mobile-menu-close]');
   const mobileOverlay = document.querySelector('[data-mobile-menu-overlay]');
+  const mobileContainer = document.querySelector('[data-mobile-menu-container]');
   const mobilePanel = document.querySelector('[data-mobile-menu-panel]');
 
   if (!headerShell) return;
@@ -213,36 +219,36 @@ function setupHeaderBehavior() {
   onScroll();
 
   const setMenuOpen = (open) => {
-    if (!mobileOverlay || !mobilePanel) return;
+    if (!mobileOverlay || !mobileContainer || !mobilePanel) return;
     const body = document.body;
     
     if (open) {
-      // 開啟選單
+      // 開啟選單 - 只鎖定滾動，不改變位置
       body.style.overflow = 'hidden';
-      body.style.position = 'fixed';
-      body.style.width = '100%';
-      body.style.top = `-${window.scrollY}px`;
       
-      // 顯示 overlay 和 panel
+      // 顯示 overlay
       mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
       mobileOverlay.classList.add('opacity-100', 'pointer-events-auto');
       
-      mobilePanel.classList.remove('opacity-0', 'translate-y-full');
+      // 顯示 container 和 panel
+      mobileContainer.classList.remove('pointer-events-none');
+      mobileContainer.classList.add('pointer-events-auto');
+      
+      mobilePanel.classList.remove('opacity-0', '-translate-y-full');
       mobilePanel.classList.add('opacity-100', 'translate-y-0');
     } else {
-      // 關閉選單
-      const scrollY = body.style.top;
+      // 關閉選單 - 恢復滾動
       body.style.overflow = '';
-      body.style.position = '';
-      body.style.width = '';
-      body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
       
-      // 隱藏 overlay 和 panel
+      // 隱藏 overlay
       mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
       mobileOverlay.classList.remove('opacity-100', 'pointer-events-auto');
       
-      mobilePanel.classList.add('opacity-0', 'translate-y-full');
+      // 隱藏 container 和 panel
+      mobileContainer.classList.add('pointer-events-none');
+      mobileContainer.classList.remove('pointer-events-auto');
+      
+      mobilePanel.classList.add('opacity-0', '-translate-y-full');
       mobilePanel.classList.remove('opacity-100', 'translate-y-0');
     }
   };
@@ -254,13 +260,11 @@ function setupHeaderBehavior() {
   mobileClose?.addEventListener('click', () => setMenuOpen(false));
   
   // 點擊 overlay（遮罩）關閉
-  mobileOverlay?.addEventListener('click', (evt) => {
-    if (evt.target === mobileOverlay) {
-      setMenuOpen(false);
-    }
+  mobileOverlay?.addEventListener('click', () => {
+    setMenuOpen(false);
   });
   
-  // 點擊 panel 內容時阻止冒泡（不關閉選單）
+  // 點擊 panel 內部（包含空白區域）不關閉選單
   mobilePanel?.addEventListener('click', (evt) => {
     evt.stopPropagation();
   });
