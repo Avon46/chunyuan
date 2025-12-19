@@ -9,21 +9,37 @@
   <body>
     <div class="page-shell">
       <header id="site-header"></header>
-      <main class="flex-1 pt-20" data-project-page>
-        <section class="page-section">
+      <main class="flex-1" data-project-page>
+        <!-- Hero Image Section -->
+        <section class="relative text-white overflow-hidden" style="min-height: 100vh; background-image: url('/assets/projects-bg.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-color: #0f172a;">
+          <div class="absolute inset-0 bg-slate-900/40"></div>
+          <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 120px; padding-bottom: 80px;">
+            <div class="space-y-6 sm:space-8">
+              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">工程實績</h1>
+              <p class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+                本頁示意工程實績清單與篩選列，工程資料統一來自 projects.json，可依類型與狀態即時篩選。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="page-section bg-white">
           <div class="mx-auto max-w-6xl px-4 space-y-8">
-            <div class="section-heading">
-              <div>
-                <h1 class="section-title">工程實績</h1>
-                <p class="section-subtitle">
-                  本頁示意工程實績清單與篩選列，工程資料統一來自 <code>projects.json</code>，可依類型與狀態即時篩選。
-                </p>
-              </div>
-              <div class="hidden md:flex items-center gap-3 text-xs text-slate-500">
-                <span>目前顯示 <span data-project-count>0</span> 件工程</span>
-                <a href="/projects/representative/" class="hover:text-brand-green">代表工程</a>
-                <a href="/projects/ongoing/" class="hover:text-brand-green">進行中工程</a>
-                <a href="/projects/map/" class="hover:text-brand-green">工程地圖</a>
+            <div class="text-center mb-8 sm:mb-10">
+              <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-2">工程實績</h2>
+              <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+                本頁示意工程實績清單與篩選列，工程資料統一來自 projects.json，可依類型與狀態即時篩選。
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-slate-500 mb-6">
+              <span>目前顯示 <span data-project-count class="font-medium text-slate-700">0</span> 件工程</span>
+              <span class="hidden sm:inline">·</span>
+              <div class="flex items-center gap-3 sm:gap-4">
+                <a href="/projects/representative/" class="hover:text-brand-green transition-colors">代表工程</a>
+                <a href="/projects/ongoing/" class="hover:text-brand-green transition-colors">進行中工程</a>
+                <a href="/projects/map/" class="hover:text-brand-green transition-colors">工程地圖</a>
               </div>
             </div>
 

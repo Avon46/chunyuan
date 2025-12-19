@@ -9,56 +9,70 @@
   <body>
     <div class="page-shell">
       <header id="site-header"></header>
-      <main class="flex-1 pt-20">
-        <section class="page-section">
-          <div class="mx-auto max-w-6xl px-4 space-y-8">
-            <div class="section-heading">
-              <div>
-                <h1 class="section-title">影音與消息</h1>
-                <p class="section-subtitle">
-                  本頁示意最新消息列表與影音網格，可依分類與年份整理新聞與影片內容。
-                </p>
-              </div>
+      <main class="flex-1">
+        <!-- Hero Image Section -->
+        <section class="relative text-white overflow-hidden" style="min-height: 100vh; background-image: url('/assets/media-bg.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-color: #0f172a;">
+          <div class="absolute inset-0 bg-slate-900/40"></div>
+          <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 120px; padding-bottom: 80px;">
+            <div class="space-y-6 sm:space-8">
+              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">影音與消息</h1>
+              <p class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+                本頁示意最新消息列表與影音網格，可依分類與年份整理新聞與影片內容。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="page-section bg-white">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6">
+            <div class="mb-8 sm:mb-10 text-center">
+              <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-2">影音與消息</h2>
+              <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+                本頁示意最新消息列表與影音網格，可依分類與年份整理新聞與影片內容。
+              </p>
             </div>
 
-            <div class="grid gap-10 md:grid-cols-[1.5fr,1.1fr] items-start">
-              <section class="space-y-4">
-                <div class="flex flex-wrap gap-2 text-xs">
-                  <span class="filter-pill filter-pill-active">全部消息</span>
-                  <span class="filter-pill">公司消息</span>
-                  <span class="filter-pill">工程進度</span>
-                  <span class="filter-pill">永續與 ESG</span>
+            <div class="grid gap-8 lg:gap-12 lg:grid-cols-[1.5fr,1fr]">
+              <!-- News Section -->
+              <section class="space-y-6">
+                <h2 class="text-lg sm:text-xl font-semibold text-slate-900 hidden lg:block">最新消息</h2>
+                <div class="flex flex-wrap gap-2">
+                  <button class="filter-pill filter-pill-active">全部消息</button>
+                  <button class="filter-pill">公司消息</button>
+                  <button class="filter-pill">工程進度</button>
+                  <button class="filter-pill">永續與 ESG</button>
                 </div>
                 <div class="space-y-3">
-                  <article class="card">
-                    <div class="card-inner space-y-1">
-                      <div class="flex items-center gap-2 text-xs text-slate-500">
-                        <span class="tag">公司消息</span>
-                        <span>2025-07-15</span>
+                  <article class="card hover:shadow-md transition-shadow">
+                    <div class="card-inner space-y-2">
+                      <div class="flex items-center gap-3 text-xs">
+                        <span class="tag tag-soft">公司消息</span>
+                        <span class="text-slate-500">2025-07-15</span>
                       </div>
-                      <h2 class="text-sm font-semibold text-slate-900">
+                      <h2 class="text-base font-semibold text-slate-900 leading-snug">
                         假資料：春原營造榮獲示意工程品質金質獎
                       </h2>
                     </div>
                   </article>
-                  <article class="card">
-                    <div class="card-inner space-y-1">
-                      <div class="flex items-center gap-2 text-xs text-slate-500">
-                        <span class="tag">工程進度</span>
-                        <span>2025-06-30</span>
+                  <article class="card hover:shadow-md transition-shadow">
+                    <div class="card-inner space-y-2">
+                      <div class="flex items-center gap-3 text-xs">
+                        <span class="tag tag-soft">工程進度</span>
+                        <span class="text-slate-500">2025-06-30</span>
                       </div>
-                      <h2 class="text-sm font-semibold text-slate-900">
+                      <h2 class="text-base font-semibold text-slate-900 leading-snug">
                         假資料：北區捷運延伸段完成重要結構里程碑
                       </h2>
                     </div>
                   </article>
-                  <article class="card">
-                    <div class="card-inner space-y-1">
-                      <div class="flex items-center gap-2 text-xs text-slate-500">
-                        <span class="tag">永續與 ESG</span>
-                        <span>2025-05-20</span>
+                  <article class="card hover:shadow-md transition-shadow">
+                    <div class="card-inner space-y-2">
+                      <div class="flex items-center gap-3 text-xs">
+                        <span class="tag tag-soft">永續與 ESG</span>
+                        <span class="text-slate-500">2025-05-20</span>
                       </div>
-                      <h2 class="text-sm font-semibold text-slate-900">
+                      <h2 class="text-base font-semibold text-slate-900 leading-snug">
                         假資料：發布年度永續報告與工地減碳行動
                       </h2>
                     </div>
@@ -66,35 +80,40 @@
                 </div>
               </section>
 
-              <section class="space-y-4">
-                <h2 class="text-lg font-semibold text-slate-900">影音精選（示意）</h2>
-                <div class="grid gap-4">
-                  <article class="card overflow-hidden">
-                    <div class="relative h-40 bg-slate-900/70 flex items-center justify-center text-xs text-slate-200">
-                      影片封面占位
+              <!-- Video Section -->
+              <section class="space-y-6">
+                <h2 class="text-lg sm:text-xl font-semibold text-slate-900">影音精選（示意）</h2>
+                <div class="space-y-4">
+                  <article class="card overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
                       <div class="absolute inset-0 flex items-center justify-center">
-                        <button class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 border border-white/40 text-white">
-                          ▶
+                        <button class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-colors" aria-label="播放影片">
+                          <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
                         </button>
                       </div>
+                      <span class="absolute bottom-2 left-2 text-xs text-white/60">影片封面占位</span>
                     </div>
-                    <div class="card-inner space-y-1">
+                    <div class="card-inner space-y-1.5">
                       <p class="text-xs text-slate-500">工程紀錄 · 假資料</p>
-                      <h3 class="text-sm font-semibold text-slate-900">示意代表工程空拍縮時影片</h3>
+                      <h3 class="text-sm font-semibold text-slate-900 leading-snug">示意代表工程空拍縮時影片</h3>
                     </div>
                   </article>
-                  <article class="card overflow-hidden">
-                    <div class="relative h-40 bg-slate-900/70 flex items-center justify-center text-xs text-slate-200">
-                      影片封面占位
+                  <article class="card overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
                       <div class="absolute inset-0 flex items-center justify-center">
-                        <button class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 border border-white/40 text-white">
-                          ▶
+                        <button class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-colors" aria-label="播放影片">
+                          <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
                         </button>
                       </div>
+                      <span class="absolute bottom-2 left-2 text-xs text-white/60">影片封面占位</span>
                     </div>
-                    <div class="card-inner space-y-1">
+                    <div class="card-inner space-y-1.5">
                       <p class="text-xs text-slate-500">品牌影片 · 假資料</p>
-                      <h3 class="text-sm font-semibold text-slate-900">示意品牌故事與團隊介紹影片</h3>
+                      <h3 class="text-sm font-semibold text-slate-900 leading-snug">示意品牌故事與團隊介紹影片</h3>
                     </div>
                   </article>
                 </div>

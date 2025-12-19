@@ -7,6 +7,19 @@
     scroll-behavior: smooth;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   body {
     @apply font-sans text-slate-800 bg-slate-50;
   }
@@ -74,7 +87,21 @@
   }
 
   .card {
-    @apply bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-elevated hover:-translate-y-0.5 transition-all duration-200;
+    @apply bg-white rounded-2xl border border-slate-100 shadow-sm transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply shadow-elevated;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .card:hover {
+      @apply -translate-y-1;
+    }
+  }
+
+  .card:focus-within {
+    @apply ring-2 ring-brand-green ring-offset-2;
   }
 
   .card-inner {
@@ -137,6 +164,32 @@
 
   .lightbox-content {
     @apply bg-slate-900 rounded-2xl overflow-hidden max-w-4xl w-full mx-4;
+  }
+
+  .kpi-card {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  .service-link .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .service-link:hover .arrow {
+      transform: translateX(4px);
+    }
+  }
+
+  .featured-project-card {
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2;
   }
 }
 

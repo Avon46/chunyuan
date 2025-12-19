@@ -11,73 +11,71 @@
       <header id="site-header"></header>
       <main class="flex-1">
         <!-- Hero -->
-        <section class="bg-slate-900 text-white pt-24 sm:pt-28 md:pt-36 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
-          <div class="mx-auto max-w-6xl px-4 sm:px-6 grid gap-8 sm:gap-10 md:grid-cols-[1.4fr,1fr] items-center">
-            <div class="space-y-4 sm:space-y-6">
-              <p class="text-xs sm:text-sm text-brand-green-light">
-                專業工程．永續夥伴（示意標語）
+        <section class="relative text-white overflow-hidden" style="min-height: 100vh; background-image: url('/assets/hero-bg.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-color: #0f172a;">
+          <div class="absolute inset-0 bg-slate-900/40"></div>
+          <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center" style="min-height: 100vh; padding-top: 140px; padding-bottom: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="space-y-6 sm:space-8">
+              <p class="text-sm sm:text-base text-brand-green-light">
+                專業工程．永續夥伴
               </p>
-              <h1>與城市共建的專業營造夥伴</h1>
-              <p class="text-sm md:text-base text-slate-200 max-w-xl leading-relaxed">
-                本網站為春原營造企業官網 Prototype，所有工程案例與圖片皆為示意用假資料。
-                透過清楚的資訊架構與卡片化呈現，協助外部訪客快速理解公司能力與代表實績。
-              </p>
-              <div class="flex flex-wrap gap-2 sm:gap-3">
+              <h1 class="text-4xl sm:text-5xl md:text-6xl">與城市共建的專業營造夥伴</h1>
+              <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
                 <a href="/projects/" class="btn btn-accent">查看工程實績</a>
                 <a href="/contact/" class="btn btn-primary">聯絡專人</a>
-                <a href="#" class="btn btn-secondary">下載公司簡介（占位）</a>
               </div>
             </div>
-            <div class="space-y-4 sm:space-y-5">
-              <div class="grid grid-cols-2 gap-3 sm:gap-4">
-                <div class="card">
-                  <div class="card-inner">
-                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1">累積工程金額（示意）</p>
-                    <p class="text-xl sm:text-2xl font-semibold text-slate-900">300+ 億</p>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-inner">
-                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1">專業團隊</p>
-                    <p class="text-xl sm:text-2xl font-semibold text-slate-900">200+ 人</p>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-inner">
-                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1">代表工程</p>
-                    <p class="text-xl sm:text-2xl font-semibold text-slate-900">80+ 件</p>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-inner">
-                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1">公共工程品質獎</p>
-                    <p class="text-xl sm:text-2xl font-semibold text-slate-900">多項</p>
-                  </div>
+          </div>
+        </section>
+
+        <!-- KPI 數據區塊 -->
+        <section class="py-12 sm:py-16 bg-white">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div class="card">
+                <div class="card-inner text-center">
+                  <p class="text-xs text-slate-500 mb-2">累積工程金額</p>
+                  <p class="text-2xl sm:text-3xl font-semibold text-slate-900">300+ 億</p>
                 </div>
               </div>
-              <p class="text-[10px] sm:text-[11px] text-slate-300">
-                上述數據皆為假數據，用於展示首頁信任指標條與 KPI 卡片樣式。
-              </p>
+              <div class="card">
+                <div class="card-inner text-center">
+                  <p class="text-xs text-slate-500 mb-2">專業團隊</p>
+                  <p class="text-2xl sm:text-3xl font-semibold text-slate-900">200+ 人</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner text-center">
+                  <p class="text-xs text-slate-500 mb-2">代表工程</p>
+                  <p class="text-2xl sm:text-3xl font-semibold text-slate-900">80+ 件</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner text-center">
+                  <p class="text-xs text-slate-500 mb-2">公共工程品質獎</p>
+                  <p class="text-2xl sm:text-3xl font-semibold text-slate-900">多項</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         <!-- Core services -->
-        <section class="page-section">
-          <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-heading">
+        <section class="relative text-white overflow-hidden" style="min-height: 80vh; background-image: url('/assets/service-bg.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-color: #0f172a;">
+          <div class="absolute inset-0 bg-slate-900/40"></div>
+          <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+            <div class="section-heading text-white">
               <div>
-                <h2 class="section-title">核心能力</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title text-white">核心能力</h2>
+                <p class="section-subtitle text-slate-200">
                   以建築、土木與專案管理三大能力為軸線，對應不同型態的公共與民間工程需求。
                 </p>
               </div>
-              <a href="/services/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+              <a href="/services/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-white hover:text-brand-green-light">
                 檢視全部核心能力
                 <span aria-hidden="true">→</span>
               </a>
             </div>
-            <div class="grid gap-4 sm:gap-5 md:grid-cols-3" data-home-services></div>
+            <div class="grid gap-4 sm:gap-5 md:grid-cols-3 mt-8 sm:mt-10" data-home-services></div>
           </div>
         </section>
 
