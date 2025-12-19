@@ -85,36 +85,41 @@ function attachFilterHandlers(projects) {
     });
   };
 
-  // Attach event listeners to filter buttons
-  const setupFilterButtons = () => {
-    const typeButtons = document.querySelectorAll('[data-filter-type]');
-    const statusButtons = document.querySelectorAll('[data-filter-status]');
+  // Attach event listeners to filter buttons using event delegation
+  const handleFilterClick = (e) => {
+    const target = e.target.closest('[data-filter-type], [data-filter-status]');
+    if (!target) return;
 
-    typeButtons.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const allTypeButtons = document.querySelectorAll('[data-filter-type]');
-        allTypeButtons.forEach((b) => b.classList.remove('filter-pill-active'));
-        btn.classList.add('filter-pill-active');
-        currentType = btn.dataset.filterType || 'all';
-        applyFilters();
-      });
-    });
+    e.preventDefault();
+    e.stopPropagation();
 
-    statusButtons.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const allStatusButtons = document.querySelectorAll('[data-filter-status]');
-        allStatusButtons.forEach((b) => b.classList.remove('filter-pill-active'));
-        btn.classList.add('filter-pill-active');
-        currentStatus = btn.dataset.filterStatus || 'all';
-        applyFilters();
+    if (target.hasAttribute('data-filter-type')) {
+      // Handle type filter
+      const allTypeButtons = document.querySelectorAll('[data-filter-type]');
+      allTypeButtons.forEach((b) => b.classList.remove('filter-pill-active'));
+      allTypeButtons.forEach((b) => {
+        if (b.dataset.filterType === target.dataset.filterType) {
+          b.classList.add('filter-pill-active');
+        }
       });
-    });
+      currentType = target.dataset.filterType || 'all';
+      applyFilters();
+    } else if (target.hasAttribute('data-filter-status')) {
+      // Handle status filter
+      const allStatusButtons = document.querySelectorAll('[data-filter-status]');
+      allStatusButtons.forEach((b) => b.classList.remove('filter-pill-active'));
+      allStatusButtons.forEach((b) => {
+        if (b.dataset.filterStatus === target.dataset.filterStatus) {
+          b.classList.add('filter-pill-active');
+        }
+      });
+      currentStatus = target.dataset.filterStatus || 'all';
+      applyFilters();
+    }
   };
 
-  // Setup filter buttons after they are rendered
-  setupFilterButtons();
+  // Use event delegation on document to handle all filter buttons
+  document.addEventListener('click', handleFilterClick);
 
   const setDrawerOpen = (open) => {
     if (!mobileDrawer) return;
