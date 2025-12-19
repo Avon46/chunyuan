@@ -23,21 +23,21 @@ function renderFilters(projects) {
   const statuses = getUniqueValues(projects, 'status');
 
   typeContainer.innerHTML = `
-    <button class="filter-pill filter-pill-active" data-filter-type="all">全部類型</button>
+    <button type="button" class="filter-pill filter-pill-active" data-filter-type="all">全部類型</button>
     ${types
       .map(
         (t) =>
-          `<button class="filter-pill" data-filter-type="${t}">${t}</button>`
+          `<button type="button" class="filter-pill" data-filter-type="${t}">${t}</button>`
       )
       .join('')}
   `;
 
   statusContainer.innerHTML = `
-    <button class="filter-pill filter-pill-active" data-filter-status="all">全部狀態</button>
+    <button type="button" class="filter-pill filter-pill-active" data-filter-status="all">全部狀態</button>
     ${statuses
       .map(
         (s) =>
-          `<button class="filter-pill" data-filter-status="${s}">${s}</button>`
+          `<button type="button" class="filter-pill" data-filter-status="${s}">${s}</button>`
       )
       .join('')}
   `;
@@ -50,7 +50,10 @@ function attachFilterHandlers(projects) {
   const mobileDrawer = document.querySelector('[data-filter-drawer]');
   const mobileApply = document.querySelector('[data-filter-apply]');
 
-  if (!listContainer) return;
+  if (!listContainer) {
+    console.error('Project list container not found');
+    return;
+  }
 
   let currentType = 'all';
   let currentStatus = 'all';
@@ -71,29 +74,36 @@ function attachFilterHandlers(projects) {
     });
   };
 
-  // Use event delegation for filter buttons
-  document.addEventListener('click', (e) => {
-    const typeBtn = e.target.closest('[data-filter-type]');
-    const statusBtn = e.target.closest('[data-filter-status]');
-    
-    if (typeBtn) {
-      e.preventDefault();
-      const allTypeButtons = document.querySelectorAll('[data-filter-type]');
-      allTypeButtons.forEach((b) => b.classList.remove('filter-pill-active'));
-      typeBtn.classList.add('filter-pill-active');
-      currentType = typeBtn.dataset.filterType || 'all';
-      applyFilters();
-    }
-    
-    if (statusBtn) {
-      e.preventDefault();
-      const allStatusButtons = document.querySelectorAll('[data-filter-status]');
-      allStatusButtons.forEach((b) => b.classList.remove('filter-pill-active'));
-      statusBtn.classList.add('filter-pill-active');
-      currentStatus = statusBtn.dataset.filterStatus || 'all';
-      applyFilters();
-    }
-  });
+  // Attach event listeners to filter buttons
+  const setupFilterButtons = () => {
+    const typeButtons = document.querySelectorAll('[data-filter-type]');
+    const statusButtons = document.querySelectorAll('[data-filter-status]');
+
+    typeButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const allTypeButtons = document.querySelectorAll('[data-filter-type]');
+        allTypeButtons.forEach((b) => b.classList.remove('filter-pill-active'));
+        btn.classList.add('filter-pill-active');
+        currentType = btn.dataset.filterType || 'all';
+        applyFilters();
+      });
+    });
+
+    statusButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const allStatusButtons = document.querySelectorAll('[data-filter-status]');
+        allStatusButtons.forEach((b) => b.classList.remove('filter-pill-active'));
+        btn.classList.add('filter-pill-active');
+        currentStatus = btn.dataset.filterStatus || 'all';
+        applyFilters();
+      });
+    });
+  };
+
+  // Setup filter buttons after they are rendered
+  setupFilterButtons();
 
   const setDrawerOpen = (open) => {
     if (!mobileDrawer) return;
@@ -115,17 +125,19 @@ function attachFilterHandlers(projects) {
     if (evt.target === mobileDrawer) setDrawerOpen(false);
   });
 
+  // Initial render
   applyFilters();
 }
 
 async function initProjectsPage() {
   initLayout();
   const projects = await loadProjects();
-  if (!projects.length) return;
+  if (!projects.length) {
+    console.warn('No projects found');
+    return;
+  }
   renderFilters(projects);
   attachFilterHandlers(projects);
 }
 
 initProjectsPage();
-
-
