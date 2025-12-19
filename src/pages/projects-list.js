@@ -90,7 +90,10 @@ function attachFilterHandlers(projects) {
     const target = e.target.closest('[data-filter-type], [data-filter-status]');
     if (!target) return;
 
-    e.preventDefault();
+    // Don't prevent default if it's a button click
+    if (target.tagName === 'BUTTON') {
+      e.preventDefault();
+    }
     e.stopPropagation();
 
     if (target.hasAttribute('data-filter-type')) {
@@ -119,7 +122,7 @@ function attachFilterHandlers(projects) {
   };
 
   // Use event delegation on document to handle all filter buttons
-  document.addEventListener('click', handleFilterClick);
+  document.addEventListener('click', handleFilterClick, true);
 
   const setDrawerOpen = (open) => {
     if (!mobileDrawer) return;
@@ -127,18 +130,41 @@ function attachFilterHandlers(projects) {
     if (open) {
       mobileDrawer.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
       mobileDrawer.classList.add('opacity-100');
+      // Ensure drawer content is clickable
+      mobileDrawer.style.pointerEvents = 'auto';
       body.classList.add('overflow-hidden');
     } else {
       mobileDrawer.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
       mobileDrawer.classList.remove('opacity-100');
+      mobileDrawer.style.pointerEvents = 'none';
       body.classList.remove('overflow-hidden');
     }
   };
 
-  mobileToggle?.addEventListener('click', () => setDrawerOpen(true));
-  mobileApply?.addEventListener('click', () => setDrawerOpen(false));
+  mobileToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDrawerOpen(true);
+  });
+  
+  mobileApply?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDrawerOpen(false);
+  });
+  
+  // Close drawer when clicking on backdrop
   mobileDrawer?.addEventListener('click', (evt) => {
-    if (evt.target === mobileDrawer) setDrawerOpen(false);
+    // Only close if clicking directly on the drawer backdrop, not on the content
+    if (evt.target === mobileDrawer || evt.target.classList.contains('bg-slate-900')) {
+      setDrawerOpen(false);
+    }
+  });
+  
+  // Prevent drawer from closing when clicking inside the white content box
+  const drawerContent = mobileDrawer?.querySelector('.rounded-2xl.bg-white');
+  drawerContent?.addEventListener('click', (e) => {
+    e.stopPropagation();
   });
 
   // Initial render
