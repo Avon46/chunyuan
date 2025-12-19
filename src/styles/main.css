@@ -113,11 +113,20 @@
   }
 
   .filter-pill {
-    @apply inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600 cursor-pointer hover:border-brand-green hover:text-brand-green;
+    @apply inline-flex items-center justify-center rounded-full border-2 border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-600 cursor-pointer hover:border-brand-green hover:text-brand-green transition-all duration-200;
+    min-width: fit-content;
+    white-space: nowrap;
+    position: relative;
+    isolation: isolate;
+    background-color: white;
   }
 
   .filter-pill-active {
-    @apply bg-brand-green text-white border-brand-green;
+    @apply border-brand-green text-brand-green bg-brand-green-light;
+    position: relative;
+    z-index: 10;
+    font-weight: 600;
+    border-width: 2px;
   }
 
   .form-label {

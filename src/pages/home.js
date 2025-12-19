@@ -85,8 +85,6 @@ function initNewsAndMedia() {
 
 function initHomePage() {
   initLayout();
-  initHeroProjects();
-  initCoreServices();
   initNewsAndMedia();
 }
 
