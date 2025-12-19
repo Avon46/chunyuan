@@ -23,8 +23,11 @@ export default defineConfig({
         employeeLogin: resolve(__dirname, 'employee-login/index.html'),
         projectDetail: resolve(__dirname, 'projects/detail.html')
       }
-    }
-  }
+    },
+    assetsDir: 'assets',
+    copyPublicDir: true
+  },
+  publicDir: 'public'
 });
 
 

@@ -1,13 +1,24 @@
 import { initLayout } from '../components/layout.js';
 import { createProjectCard } from '../components/cards.js';
+import projectsData from '../data/projects.json';
 
 async function loadProjects() {
-  const res = await fetch('/src/data/projects.json');
-  if (!res.ok) {
-    console.error('Failed to load projects.json');
+  try {
+    // Try to use imported data first (works in both dev and production)
+    if (projectsData && Array.isArray(projectsData) && projectsData.length > 0) {
+      return projectsData;
+    }
+    // Fallback to fetch (for development)
+    const res = await fetch('/src/data/projects.json');
+    if (!res.ok) {
+      console.error('Failed to load projects.json');
+      return [];
+    }
+    return res.json();
+  } catch (error) {
+    console.error('Error loading projects:', error);
     return [];
   }
-  return res.json();
 }
 
 function getUniqueValues(projects, key) {
