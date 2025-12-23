@@ -20,6 +20,8 @@ export function initLayout() {
   initIntro();
   // 初始化 Hero 跑马灯
   initHeroMarquee();
+  // 初始化 Scroll Reveal 動畫系統
+  initScrollReveal();
 }
 
 function injectHeader() {
@@ -380,6 +382,19 @@ function initHeroMarquee() {
       initMarquee();
     }).catch((err) => {
       console.warn('Failed to load hero marquee:', err);
+    });
+  }, 100);
+}
+
+// 初始化 Scroll Reveal 動畫系統
+function initScrollReveal() {
+  // 使用 setTimeout 确保 DOM 完全加载
+  setTimeout(() => {
+    // 动态导入 Scroll Reveal 组件
+    import('./scrollReveal.js').then(({ initScrollReveal: initReveal }) => {
+      initReveal();
+    }).catch((err) => {
+      console.warn('Failed to load scroll reveal:', err);
     });
   }, 100);
 }

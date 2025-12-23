@@ -15,8 +15,8 @@
           <div class="absolute inset-0 bg-slate-900/40"></div>
           <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 120px; padding-bottom: 80px;">
             <div class="space-y-6 sm:space-8">
-              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">工程實績</h1>
-              <p class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold" data-reveal="fade">工程實績</h1>
+              <p class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed" data-reveal="fade" data-delay="80">
                 本頁示意工程實績清單與篩選列，工程資料統一來自 projects.json，可依類型與狀態即時篩選。
               </p>
             </div>
@@ -27,8 +27,8 @@
         <section class="page-section bg-white">
           <div class="mx-auto max-w-6xl px-4 space-y-8">
             <div class="text-center mb-8 sm:mb-10">
-              <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-2">工程實績</h2>
-              <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+              <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-2" data-reveal="fade">工程實績</h2>
+              <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto" data-reveal="fade" data-delay="80">
                 本頁示意工程實績清單與篩選列，工程資料統一來自 projects.json，可依類型與狀態即時篩選。
               </p>
             </div>
@@ -67,7 +67,7 @@
             </div>
 
             <!-- List -->
-            <div class="grid gap-5 md:grid-cols-3" data-project-list></div>
+            <div class="grid gap-5 md:grid-cols-3" data-project-list data-stagger="100"></div>
           </div>
         </section>
       </main>

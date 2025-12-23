@@ -38,7 +38,7 @@ function renderServiceCards() {
   };
 
   container.innerHTML = serviceCards.map((card, index) => `
-    <article class="card h-full flex flex-col">
+    <article class="card h-full flex flex-col" data-reveal="up">
       <div class="card-inner space-y-4 flex-1 flex flex-col" style="min-height: 400px;">
         <div class="flex items-center gap-3">
           <div class="text-brand-green flex-shrink-0">

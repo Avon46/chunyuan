@@ -15,10 +15,10 @@
           <div class="absolute inset-0 bg-slate-900/40"></div>
           <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 120px; padding-bottom: 80px;">
             <div class="space-y-6 sm:space-8">
-              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">關於春原</h1>
+              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold" data-reveal="fade">關於春原</h1>
               <div class="space-y-3">
-                <p class="text-lg sm:text-xl text-slate-200">誠信且高效的工作態度</p>
-                <p class="text-lg sm:text-xl text-slate-200">惜緣、惜福、再造福</p>
+                <p class="text-lg sm:text-xl text-slate-200" data-reveal="fade" data-delay="80">誠信且高效的工作態度</p>
+                <p class="text-lg sm:text-xl text-slate-200" data-reveal="fade" data-delay="160">惜緣、惜福、再造福</p>
               </div>
             </div>
           </div>
@@ -29,15 +29,15 @@
           <div class="mx-auto max-w-6xl px-4 space-y-12 sm:space-16">
             <!-- 一、企業定位 -->
             <div class="text-center max-w-4xl mx-auto pt-8">
-              <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">關於春原</h1>
-              <p class="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 leading-relaxed">
+              <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4" data-reveal="fade">關於春原</h1>
+              <p class="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 leading-relaxed" data-reveal="fade" data-delay="80">
                 春原營造專注於建築工程、土木工程與專案管理，提供從規劃到交付的全流程管理服務。
               </p>
             </div>
 
             <!-- 二、公司簡介 -->
             <div class="space-y-6 max-w-4xl mx-auto">
-              <div class="card">
+              <div class="card" data-reveal="up">
                 <div class="card-inner space-y-3">
                   <h2 class="text-xl font-semibold text-slate-900">服務範圍與客群</h2>
                   <p class="text-sm text-slate-700 leading-relaxed">
@@ -46,7 +46,7 @@
                   </p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card" data-reveal="up" data-delay="80">
                 <div class="card-inner space-y-3">
                   <h2 class="text-xl font-semibold text-slate-900">管理能力</h2>
                   <p class="text-sm text-slate-700 leading-relaxed">
@@ -55,7 +55,7 @@
                   </p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card" data-reveal="up" data-delay="160">
                 <div class="card-inner space-y-3">
                   <h2 class="text-xl font-semibold text-slate-900">承諾與方法</h2>
                   <p class="text-sm text-slate-700 leading-relaxed">
@@ -67,8 +67,8 @@
             </div>
 
             <!-- 三、四個信任數據 KPI -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-              <div class="card border-brand-green-light border-2 bg-brand-green-light/10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6" data-stagger="100">
+              <div class="card border-brand-green-light border-2 bg-brand-green-light/10" data-reveal="up">
                 <div class="card-inner text-center">
                   <div class="text-brand-green mb-2 flex justify-center">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,7 @@
                   <p class="text-3xl font-bold text-brand-green" data-kpi-value>1988</p>
                 </div>
               </div>
-              <div class="card border-brand-green-light border-2 bg-brand-green-light/10">
+              <div class="card border-brand-green-light border-2 bg-brand-green-light/10" data-reveal="up">
                 <div class="card-inner text-center">
                   <div class="text-brand-green mb-2 flex justify-center">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@
                   <p class="text-3xl font-bold text-brand-green" data-kpi-value>200</p>
                 </div>
               </div>
-              <div class="card border-brand-green-light border-2 bg-brand-green-light/10">
+              <div class="card border-brand-green-light border-2 bg-brand-green-light/10" data-reveal="up">
                 <div class="card-inner text-center">
                   <div class="text-brand-green mb-2 flex justify-center">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@
                   <p class="text-3xl font-bold text-brand-green" data-kpi-value>3 類</p>
                 </div>
               </div>
-              <div class="card border-brand-green-light border-2 bg-brand-green-light/10">
+              <div class="card border-brand-green-light border-2 bg-brand-green-light/10" data-reveal="up">
                 <div class="card-inner text-center">
                   <div class="text-brand-green mb-2 flex justify-center">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -115,7 +115,7 @@
             </div>
 
             <!-- 四、核心優勢 -->
-            <div class="card">
+            <div class="card" data-reveal="up">
               <div class="card-inner space-y-4">
                 <h2 class="text-xl font-semibold text-slate-900">核心優勢</h2>
                 <ul class="grid gap-3 md:grid-cols-2 text-sm text-slate-700">
@@ -144,7 +144,7 @@
             </div>
 
             <!-- 五、發展里程碑 -->
-            <div class="card">
+            <div class="card" data-reveal="up" data-delay="80">
               <div class="card-inner space-y-4">
                 <h2 class="text-xl font-semibold text-slate-900">發展里程碑</h2>
                 <div class="space-y-4">
@@ -173,7 +173,7 @@
             </div>
 
             <!-- 六、團隊與組織 -->
-            <div class="card">
+            <div class="card" data-reveal="up" data-delay="160">
               <div class="card-inner space-y-3">
                 <h2 class="text-xl font-semibold text-slate-900">團隊與組織</h2>
                 <p class="text-sm text-slate-700 leading-relaxed">
@@ -185,7 +185,7 @@
             </div>
 
             <!-- 七、合作方式與流程 -->
-            <div class="card">
+            <div class="card" data-reveal="up" data-delay="240">
               <div class="card-inner space-y-4">
                 <h2 class="text-xl font-semibold text-slate-900">合作方式與流程</h2>
                 <div class="grid gap-4 md:grid-cols-3">
@@ -215,7 +215,7 @@
             </div>
 
             <!-- 八、收尾 CTA -->
-            <div class="card bg-brand-green text-white">
+            <div class="card bg-brand-green text-white" data-reveal="zoom">
               <div class="card-inner text-center space-y-4">
                 <p class="text-lg sm:text-xl font-semibold">
                   準備開始您的下一個工程計畫？歡迎與我們聯繫，討論您的需求。

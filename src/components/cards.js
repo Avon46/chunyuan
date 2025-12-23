@@ -1,6 +1,7 @@
 export function createProjectCard(project) {
   const wrapper = document.createElement('article');
   wrapper.className = 'card flex flex-col';
+  wrapper.setAttribute('data-reveal', 'up');
   wrapper.innerHTML = `
     <div class="relative h-40 md:h-44 w-full overflow-hidden rounded-t-2xl bg-slate-200">
       <div class="absolute inset-0 flex items-center justify-center text-xs text-slate-500">
@@ -51,6 +52,7 @@ export function createProjectCard(project) {
 export function createServiceCard(service) {
   const wrapper = document.createElement('article');
   wrapper.className = 'card';
+  wrapper.setAttribute('data-reveal', 'up');
   wrapper.innerHTML = `
     <div class="card-inner space-y-4">
       <div class="flex items-center gap-3">
@@ -77,6 +79,7 @@ export function createServiceCard(service) {
 export function createNewsCard(item) {
   const wrapper = document.createElement('article');
   wrapper.className = 'card';
+  wrapper.setAttribute('data-reveal', 'up');
   wrapper.innerHTML = `
     <div class="card-inner space-y-3">
       <div class="flex items-center gap-2 text-xs text-slate-500">
@@ -97,6 +100,7 @@ export function createNewsCard(item) {
 export function createVideoCard(video) {
   const wrapper = document.createElement('article');
   wrapper.className = 'card overflow-hidden';
+  wrapper.setAttribute('data-reveal', 'up');
   wrapper.innerHTML = `
     <div class="relative h-40 md:h-44 w-full bg-slate-900/60 flex items-center justify-center">
       <div class="absolute inset-0 bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-700 opacity-80"></div>

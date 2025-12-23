@@ -15,8 +15,8 @@
           <div class="absolute inset-0 bg-slate-900/40"></div>
           <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 120px; padding-bottom: 80px;">
             <div class="space-y-6 sm:space-8">
-              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">影音與消息</h1>
-              <p class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold" data-reveal="fade">影音與消息</h1>
+              <p class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed" data-reveal="fade" data-delay="80">
                 本頁示意最新消息列表與影音網格，可依分類與年份整理新聞與影片內容。
               </p>
             </div>
@@ -27,8 +27,8 @@
         <section class="page-section bg-white">
           <div class="mx-auto max-w-7xl px-4 sm:px-6">
             <div class="mb-8 sm:mb-10 text-center">
-              <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-2">影音與消息</h2>
-              <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+              <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-2" data-reveal="fade">影音與消息</h2>
+              <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto" data-reveal="fade" data-delay="80">
                 本頁示意最新消息列表與影音網格，可依分類與年份整理新聞與影片內容。
               </p>
             </div>
@@ -36,15 +36,15 @@
             <div class="grid gap-8 lg:gap-12 lg:grid-cols-[1.5fr,1fr]">
               <!-- News Section -->
               <section class="space-y-6">
-                <h2 class="text-lg sm:text-xl font-semibold text-slate-900 hidden lg:block">最新消息</h2>
-                <div class="flex flex-wrap gap-2">
+                <h2 class="text-lg sm:text-xl font-semibold text-slate-900 hidden lg:block" data-reveal="fade">最新消息</h2>
+                <div class="flex flex-wrap gap-2" data-reveal="fade" data-delay="80">
                   <button class="filter-pill filter-pill-active">全部消息</button>
                   <button class="filter-pill">公司消息</button>
                   <button class="filter-pill">工程進度</button>
                   <button class="filter-pill">永續與 ESG</button>
                 </div>
-                <div class="space-y-3">
-                  <article class="card hover:shadow-md transition-shadow">
+                <div class="space-y-3" data-stagger="80">
+                  <article class="card hover:shadow-md transition-shadow" data-reveal="up">
                     <div class="card-inner space-y-2">
                       <div class="flex items-center gap-3 text-xs">
                         <span class="tag tag-soft">公司消息</span>
@@ -55,7 +55,7 @@
                       </h2>
                     </div>
                   </article>
-                  <article class="card hover:shadow-md transition-shadow">
+                  <article class="card hover:shadow-md transition-shadow" data-reveal="up">
                     <div class="card-inner space-y-2">
                       <div class="flex items-center gap-3 text-xs">
                         <span class="tag tag-soft">工程進度</span>
@@ -66,7 +66,7 @@
                       </h2>
                     </div>
                   </article>
-                  <article class="card hover:shadow-md transition-shadow">
+                  <article class="card hover:shadow-md transition-shadow" data-reveal="up">
                     <div class="card-inner space-y-2">
                       <div class="flex items-center gap-3 text-xs">
                         <span class="tag tag-soft">永續與 ESG</span>
@@ -82,9 +82,9 @@
 
               <!-- Video Section -->
               <section class="space-y-6">
-                <h2 class="text-lg sm:text-xl font-semibold text-slate-900">影音精選（示意）</h2>
-                <div class="space-y-4">
-                  <article class="card overflow-hidden hover:shadow-md transition-shadow">
+                <h2 class="text-lg sm:text-xl font-semibold text-slate-900" data-reveal="fade">影音精選（示意）</h2>
+                <div class="space-y-4" data-stagger="100">
+                  <article class="card overflow-hidden hover:shadow-md transition-shadow" data-reveal="up">
                     <div class="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
                       <div class="absolute inset-0 flex items-center justify-center">
                         <button class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-colors" aria-label="播放影片">
@@ -100,7 +100,7 @@
                       <h3 class="text-sm font-semibold text-slate-900 leading-snug">示意代表工程空拍縮時影片</h3>
                     </div>
                   </article>
-                  <article class="card overflow-hidden hover:shadow-md transition-shadow">
+                  <article class="card overflow-hidden hover:shadow-md transition-shadow" data-reveal="up">
                     <div class="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
                       <div class="absolute inset-0 flex items-center justify-center">
                         <button class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-colors" aria-label="播放影片">

@@ -15,11 +15,11 @@
           <div class="absolute inset-0 bg-slate-900/40"></div>
           <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <div class="space-y-6 sm:space-8">
-              <p class="text-sm sm:text-base text-brand-green-light">
+              <p class="text-sm sm:text-base text-brand-green-light" data-reveal="fade">
                 專業工程．永續夥伴
               </p>
-              <h1 class="text-4xl sm:text-5xl md:text-6xl">與城市共建的專業營造夥伴</h1>
-              <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+              <h1 class="text-4xl sm:text-5xl md:text-6xl" data-reveal="fade" data-delay="80">與城市共建的專業營造夥伴</h1>
+              <div class="flex flex-wrap justify-center gap-3 sm:gap-4" data-reveal="fade" data-delay="160">
                 <a href="/projects/" class="btn btn-accent">查看工程實績</a>
                 <a href="/contact/" class="btn btn-primary">聯絡專人</a>
               </div>
@@ -30,26 +30,26 @@
         <!-- KPI 數據區塊 -->
         <section class="py-12 sm:py-16 bg-white">
           <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-              <div class="card">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" data-stagger="100">
+              <div class="card" data-reveal="up">
                 <div class="card-inner text-center">
                   <p class="text-xs text-slate-500 mb-2">累積工程金額</p>
                   <p class="text-2xl sm:text-3xl font-semibold text-slate-900" data-kpi-value>300 億</p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card" data-reveal="up">
                 <div class="card-inner text-center">
                   <p class="text-xs text-slate-500 mb-2">專業團隊</p>
                   <p class="text-2xl sm:text-3xl font-semibold text-slate-900" data-kpi-value>200 人</p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card" data-reveal="up">
                 <div class="card-inner text-center">
                   <p class="text-xs text-slate-500 mb-2">代表工程</p>
                   <p class="text-2xl sm:text-3xl font-semibold text-slate-900" data-kpi-value>80 件</p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card" data-reveal="up">
                 <div class="card-inner text-center">
                   <p class="text-xs text-slate-500 mb-2">公共工程品質獎</p>
                   <p class="text-2xl sm:text-3xl font-semibold text-slate-900" data-kpi-value>15 項</p>
@@ -62,14 +62,14 @@
         <!-- Map preview -->
         <section class="page-section">
           <div class="mx-auto max-w-6xl px-4 sm:px-6 grid gap-6 sm:gap-8 md:grid-cols-[1.2fr,1fr] items-center">
-            <div>
+            <div data-reveal="fade">
               <h2 class="section-title mb-3">亮點工程地圖預覽</h2>
               <p class="section-subtitle mb-6">
                 此區為工程分布地圖示意，可於實作階段串接實際 GIS 或互動地圖，協助訪客從地理視角理解工程布局。
               </p>
               <a href="/projects/map/" class="btn btn-primary">前往工程地圖總覽</a>
             </div>
-            <div class="card h-60 md:h-72 flex items-center justify-center text-xs text-slate-500">
+            <div class="card h-60 md:h-72 flex items-center justify-center text-xs text-slate-500" data-reveal="zoom" data-delay="80">
               地圖占位圖（未串接實際地圖）
             </div>
           </div>
@@ -80,18 +80,18 @@
           <div class="mx-auto max-w-6xl px-4 sm:px-6">
             <div class="section-heading mb-10">
               <div>
-                <h2 class="section-title">品質與永續實踐</h2>
-                <p class="section-subtitle text-slate-300">
+                <h2 class="section-title" data-reveal="fade">品質與永續實踐</h2>
+                <p class="section-subtitle text-slate-300" data-reveal="fade" data-delay="80">
                   以下為品質政策與永續行動的示意區塊，實際可對應認證、工安指標與 ESG 作為。
                 </p>
               </div>
-              <a href="/quality/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green-light hover:text-white">
+              <a href="/quality/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green-light hover:text-white" data-reveal="fade" data-delay="160">
                 檢視品質政策
                 <span aria-hidden="true">→</span>
               </a>
             </div>
-            <div class="grid gap-4 sm:gap-5 md:grid-cols-3">
-              <div class="card bg-slate-900/60 border-slate-700">
+            <div class="grid gap-4 sm:gap-5 md:grid-cols-3" data-stagger="100">
+              <div class="card bg-slate-900/60 border-slate-700" data-reveal="up">
                 <div class="card-inner space-y-2 sm:space-y-3">
                   <p class="text-xs text-slate-400">品質管理</p>
                   <h3 class="text-base sm:text-lg font-semibold">工程品質與驗收流程</h3>
@@ -100,7 +100,7 @@
                   </p>
                 </div>
               </div>
-              <div class="card bg-slate-900/60 border-slate-700">
+              <div class="card bg-slate-900/60 border-slate-700" data-reveal="up">
                 <div class="card-inner space-y-2 sm:space-y-3">
                   <p class="text-xs text-slate-400">安全與工安</p>
                   <h3 class="text-base sm:text-lg font-semibold">工地安全與風險控管</h3>
@@ -109,7 +109,7 @@
                   </p>
                 </div>
               </div>
-              <div class="card bg-slate-900/60 border-slate-700">
+              <div class="card bg-slate-900/60 border-slate-700" data-reveal="up">
                 <div class="card-inner space-y-2 sm:space-y-3">
                   <p class="text-xs text-slate-400">永續與 ESG</p>
                   <h3 class="text-base sm:text-lg font-semibold">節能減碳與在地共榮</h3>
@@ -128,24 +128,24 @@
             <div>
               <div class="section-heading">
                 <div>
-                  <h2 class="section-title">最新消息</h2>
-                  <p class="section-subtitle">
+                  <h2 class="section-title" data-reveal="fade">最新消息</h2>
+                  <p class="section-subtitle" data-reveal="fade" data-delay="80">
                     以下為示意用消息卡片，可依實際需求調整分類與版型。
                   </p>
                 </div>
-                <a href="/media/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+                <a href="/media/" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark" data-reveal="fade" data-delay="160">
                   前往消息與影音
                   <span aria-hidden="true">→</span>
                 </a>
               </div>
-              <div class="grid gap-4" data-home-news></div>
+              <div class="grid gap-4" data-home-news data-stagger="80"></div>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">影音精選</h3>
-              <p class="text-xs text-slate-500 mb-4">
+              <h3 class="text-lg font-semibold text-slate-900 mb-3" data-reveal="fade">影音精選</h3>
+              <p class="text-xs text-slate-500 mb-4" data-reveal="fade" data-delay="80">
                 此區為工程記錄與品牌影像示意，實際可串接影音平台。
               </p>
-              <div class="grid gap-4" data-home-videos></div>
+              <div class="grid gap-4" data-home-videos data-stagger="80"></div>
             </div>
           </div>
         </section>

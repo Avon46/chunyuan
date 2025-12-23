@@ -299,6 +299,68 @@
       transition: none !important;
     }
   }
+
+  /* Scroll Reveal 動畫系統 */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 420ms ease, transform 420ms ease;
+  }
+
+  [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* 動畫類型：fade（只改 opacity） */
+  [data-reveal="fade"] {
+    transform: none;
+  }
+
+  /* 動畫類型：left（從左移入） */
+  [data-reveal="left"] {
+    transform: translateX(-24px);
+  }
+
+  [data-reveal="left"].is-revealed {
+    transform: translateX(0);
+  }
+
+  /* 動畫類型：right（從右移入） */
+  [data-reveal="right"] {
+    transform: translateX(24px);
+  }
+
+  [data-reveal="right"].is-revealed {
+    transform: translateX(0);
+  }
+
+  /* 動畫類型：up（從下移入，預設） */
+  [data-reveal="up"] {
+    transform: translateY(12px);
+  }
+
+  [data-reveal="up"].is-revealed {
+    transform: translateY(0);
+  }
+
+  /* 動畫類型：zoom（縮放） */
+  [data-reveal="zoom"] {
+    transform: scale(0.98);
+  }
+
+  [data-reveal="zoom"].is-revealed {
+    transform: scale(1);
+  }
+
+  /* 支持 prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
 }
 
 
