@@ -1,5 +1,6 @@
 import { initLayout } from '../components/layout.js';
 import { createProjectCard, createServiceCard, createNewsCard, createVideoCard } from '../components/cards.js';
+import { initKPICounters } from '../components/kpiCounter.js';
 import projects from '../data/projects.json';
 
 function initHeroProjects() {
@@ -86,6 +87,8 @@ function initNewsAndMedia() {
 function initHomePage() {
   initLayout();
   initNewsAndMedia();
+  // 初始化 KPI 數字跳轉動畫
+  initKPICounters();
 }
 
 initHomePage();

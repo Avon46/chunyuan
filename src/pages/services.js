@@ -89,7 +89,6 @@ function setupSmoothScroll() {
 }
 
 function initServicesPage() {
-  renderKPIs();
   renderServiceCards();
   setupSmoothScroll();
 }

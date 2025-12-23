@@ -8,10 +8,18 @@ const NAV_LINKS = [
 
 const EMPLOYEE_ENTRY = { href: '/employee-login/', label: '員工專區' };
 
+// Intro 相關常數
+const INTRO_STORAGE_KEY = 'intro_seen_at';
+const INTRO_TTL = 24 * 60 * 60 * 1000; // 24 小時（毫秒）
+
 export function initLayout() {
   injectHeader();
   injectFooter();
   setupHeaderBehavior();
+  // 初始化 Intro 開場遮罩
+  initIntro();
+  // 初始化 Hero 跑马灯
+  initHeroMarquee();
 }
 
 function injectHeader() {
@@ -273,6 +281,107 @@ function setupHeaderBehavior() {
 function normalizePath(path) {
   if (!path.endsWith('/')) return path + '/';
   return path;
+}
+
+/**
+ * 判斷是否應該顯示 Intro
+ * @returns {boolean}
+ */
+function shouldShowIntro() {
+  // 檢查 prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (prefersReducedMotion) {
+    // 若偏好減少動效，視同已看過，直接寫入 timestamp 並略過
+    localStorage.setItem(INTRO_STORAGE_KEY, Date.now().toString());
+    return false;
+  }
+
+  // 檢查 localStorage
+  const seenAt = localStorage.getItem(INTRO_STORAGE_KEY);
+  
+  if (!seenAt) {
+    // 無值：第一次進入，顯示
+    return true;
+  }
+
+  // 有值：檢查是否超過 24 小時
+  const seenTimestamp = parseInt(seenAt, 10);
+  const now = Date.now();
+  const timeDiff = now - seenTimestamp;
+
+  if (timeDiff < INTRO_TTL) {
+    // 24 小時內：略過
+    return false;
+  }
+
+  // 超過 24 小時：再顯示一次
+  return true;
+}
+
+/**
+ * 初始化 Intro 開場遮罩
+ */
+function initIntro() {
+  // 檢查是否應該顯示
+  if (!shouldShowIntro()) {
+    // 不顯示：直接啟用頁面
+    document.body.classList.add('is-ready');
+    return;
+  }
+
+  // 應該顯示：先寫入 timestamp（避免重新整理狂播）
+  localStorage.setItem(INTRO_STORAGE_KEY, Date.now().toString());
+
+  // 檢查是否已經插入過 Intro
+  if (document.getElementById('intro')) {
+    return;
+  }
+
+  // 插入 Intro Overlay
+  const introHTML = `
+    <div id="intro" class="intro" aria-hidden="true">
+      <div class="intro__inner">
+        <div class="intro__logo">春</div>
+        <div class="intro__text">春原營造股份有限公司</div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('afterbegin', introHTML);
+
+  // 鎖定滾動
+  document.body.classList.add('is-locked');
+
+  // 300ms 後開始離場動畫
+  setTimeout(() => {
+    const intro = document.getElementById('intro');
+    if (intro) {
+      intro.classList.add('is-leaving');
+    }
+  }, 300);
+
+  // 900ms 後移除 Intro，解鎖滾動，啟用頁面
+  setTimeout(() => {
+    const intro = document.getElementById('intro');
+    if (intro) {
+      intro.remove();
+    }
+    document.body.classList.remove('is-locked');
+    document.body.classList.add('is-ready');
+  }, 900);
+}
+
+// 初始化 Hero 跑马灯
+function initHeroMarquee() {
+  // 使用 setTimeout 确保 DOM 完全加载
+  setTimeout(() => {
+    // 动态导入跑马灯组件
+    import('./heroMarquee.js').then(({ initHeroMarquee: initMarquee }) => {
+      initMarquee();
+    }).catch((err) => {
+      console.warn('Failed to load hero marquee:', err);
+    });
+  }, 100);
 }
 
 

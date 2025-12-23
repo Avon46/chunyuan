@@ -24,6 +24,10 @@
     @apply font-sans text-slate-800 bg-slate-50;
   }
 
+  body.is-locked {
+    overflow: hidden;
+  }
+
   h1 {
     @apply text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight;
   }
@@ -199,6 +203,101 @@
 
   .featured-project-card {
     @apply focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2;
+  }
+
+  /* Hero 跑马灯品牌带 */
+  .cy-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .cy-marquee__track {
+    display: inline-flex;
+    gap: 4rem;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .cy-marquee__track {
+      animation: cy-marquee 18s linear infinite;
+    }
+  }
+
+  .cy-marquee__text {
+    font-size: clamp(28px, 6vw, 72px);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.6);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+  }
+
+  @keyframes cy-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  /* Intro Overlay */
+  .intro {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background-color: rgba(15, 23, 42, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                pointer-events 0s;
+    pointer-events: auto;
+  }
+
+  .intro.is-leaving {
+    opacity: 0;
+    transform: translateY(-12px);
+    pointer-events: none;
+  }
+
+  .intro__inner {
+    text-align: center;
+    color: white;
+  }
+
+  .intro__logo {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: #10b981;
+  }
+
+  .intro__text {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+  }
+
+  @media (min-width: 640px) {
+    .intro__logo {
+      font-size: 5rem;
+    }
+    .intro__text {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* 支持 prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .intro {
+      transition: none !important;
+    }
   }
 }
 

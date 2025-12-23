@@ -76,7 +76,7 @@
                     </svg>
                   </div>
                   <p class="text-xs text-slate-500 mb-1">成立年份</p>
-                  <p class="text-3xl font-bold text-brand-green">1988</p>
+                  <p class="text-3xl font-bold text-brand-green" data-kpi-value>1988</p>
                 </div>
               </div>
               <div class="card border-brand-green-light border-2 bg-brand-green-light/10">
@@ -87,7 +87,7 @@
                     </svg>
                   </div>
                   <p class="text-xs text-slate-500 mb-1">完工案件數</p>
-                  <p class="text-3xl font-bold text-brand-green">200+</p>
+                  <p class="text-3xl font-bold text-brand-green" data-kpi-value>200</p>
                 </div>
               </div>
               <div class="card border-brand-green-light border-2 bg-brand-green-light/10">
@@ -98,7 +98,7 @@
                     </svg>
                   </div>
                   <p class="text-xs text-slate-500 mb-1">工程類型覆蓋</p>
-                  <p class="text-3xl font-bold text-brand-green">3 類</p>
+                  <p class="text-3xl font-bold text-brand-green" data-kpi-value>3 類</p>
                 </div>
               </div>
               <div class="card border-brand-green-light border-2 bg-brand-green-light/10">
@@ -109,7 +109,7 @@
                     </svg>
                   </div>
                   <p class="text-xs text-slate-500 mb-1">品質認證與獎項</p>
-                  <p class="text-3xl font-bold text-brand-green">5+ 項</p>
+                  <p class="text-3xl font-bold text-brand-green" data-kpi-value>5 項</p>
                 </div>
               </div>
             </div>
@@ -230,7 +230,10 @@
     </div>
     <script type="module">
       import { initLayout } from '/src/components/layout.js';
+      import { initKPICounters } from '/src/components/kpiCounter.js';
       initLayout();
+      // 初始化 KPI 數字跳轉動畫
+      initKPICounters();
     </script>
   </body>
 </html>
